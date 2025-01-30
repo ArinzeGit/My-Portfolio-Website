@@ -14,10 +14,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[url('/images/portfolio-background.jpg')] bg-cover bg-center min-h-[100vh] p-[25px] flex justify-center items-center">
-        <div>
+      <body className="antialiased bg-[url('/images/portfolio-background.webp')] bg-cover bg-center min-h-[100vh] p-[25px] flex justify-center items-center">
+        <div className="shadow-[0_0_30px_rgb(188,182,166)]">
           <NavBar />
-          <div className="w-[80vw] h-[35vw]">{children}</div>
+          <div className="w-[max(80vw,870px)] sm:h-[max(35vw,500px)]">
+            {children}
+          </div>
         </div>
       </body>
     </html>

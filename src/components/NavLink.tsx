@@ -16,8 +16,8 @@ const NavLink = ({ label, href }: NavLinkProps) => {
       <div
         className={`${
           isActive
-            ? "text-[#3498DB] font-[900] border-[#3498DB]"
-            : "text-[#C0C0C0] font-[500] border-[transparent]"
+            ? "text-homePrimary font-[900] border-homePrimary"
+            : "text-homeSecondary font-[500] border-[transparent]"
         } hover:border-[#3489DB] text-[16px] font-roboto transition-colors duration-300 ease-in-out border-[2px] px-3 py-1 rounded-full`}
       >
         <span>{label}</span>

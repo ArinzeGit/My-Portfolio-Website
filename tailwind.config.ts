@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        homePrimary: "#3498DB",
+        homeSecondary: "#F3F4F6",
       },
       fontFamily: {
         roboto: ['Roboto', 'Montserrat', 'sans-serif'],

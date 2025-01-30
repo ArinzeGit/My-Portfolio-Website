@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const NavBar = () => {
   return (
-    <div className="bg-[#121212] rounded-t-[12px] flex justify-between items-center p-[20px] shadow-[0_1px_1px_0_rgba(0,0,0,0.25)]">
+    <div className="bg-[#121212] flex justify-between items-center p-[20px]">
       <div className="flex gap-[20px] items-center">
         <Image
           height={40}
@@ -11,7 +11,7 @@ const NavBar = () => {
           src={"/images/concentric-circles.svg"}
           alt="concentric circles"
         />
-        <h1 className="text-[30px] text-[#C0C0C0] font-roboto">
+        <h1 className="text-[30px] text-homeSecondary font-roboto">
           Dennings Owoh
         </h1>
       </div>
