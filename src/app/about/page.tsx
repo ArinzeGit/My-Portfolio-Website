@@ -1,7 +1,7 @@
 import Image from "next/image";
 const About = () => {
   return (
-    <div className="bg-[url('/images/about-page-background.webp')] bg-cover bg-center h-full">
+    <div className="bg-[url('/images/about-page-background.webp')] bg-cover bg-center min-h-full">
       <Image
         src={"/images/arinze in suit.jpg"}
         alt="Professional image"

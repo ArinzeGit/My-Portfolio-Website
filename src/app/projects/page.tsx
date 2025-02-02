@@ -1,7 +1,60 @@
 const Projects = () => {
   return (
-    <div className="bg-[url('/images/home-page-background.png')] bg-cover bg-center h-full">
-      Projects
+    <div className="bg-[url('/images/home-page-background.png')] bg-cover bg-center min-h-full">
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
+      <p>Projects</p>
     </div>
   );
 };

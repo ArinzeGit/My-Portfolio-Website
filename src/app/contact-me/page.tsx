@@ -1,7 +1,78 @@
 const ContactMe = () => {
   return (
-    <div className="bg-[url('/images/home-page-background.png')] bg-cover bg-center h-full">
-      Contact Me
+    <div className="bg-[url('/images/home-page-background.png')] bg-cover bg-center min-h-full">
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
+      <p>Contact Me</p>
     </div>
   );
 };

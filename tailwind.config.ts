@@ -12,7 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         homePrimary: "#3498DB",
-        homeSecondary: "#F3F4F6",
+        aboutPrimary: "#E67E22",
+        projectsPrimary: "#27AE60",
+        contactMePrimary: "#9B59B6",
+        secondary: "#F0F0F0",
       },
       fontFamily: {
         roboto: ['Roboto', 'Montserrat', 'sans-serif'],
@@ -20,5 +23,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')],
 } satisfies Config;
