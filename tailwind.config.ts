@@ -11,11 +11,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        homePrimary: "#3498DB",
-        aboutPrimary: "#E67E22",
-        projectsPrimary: "#27AE60",
-        contactMePrimary: "#9B59B6",
-        secondary: "#F0F0F0",
+        homePrimary: "rgb(52, 152, 219)",
+        aboutPrimary: "rgb(230, 126, 34)",
+        projectsPrimary: "rgb(39, 174, 96)",
+        contactMePrimary: "rgb(155, 89, 182)",
+        secondary: "rgb(240, 240, 240)",
       },
       fontFamily: {
         roboto: ['Roboto', 'Montserrat', 'sans-serif'],

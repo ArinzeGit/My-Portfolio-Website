@@ -8,24 +8,24 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const pathname = usePathname();
-  const [themeColor, setThemeColor] = useState<string>("#BCB6A6");
+  const [themeColor, setThemeColor] = useState<string>("rgb(188, 182, 166)");
 
   useEffect(() => {
     switch (pathname) {
       case "/home":
-        setThemeColor("#3498DB");
+        setThemeColor("rgb(52, 152, 219)");
         break;
       case "/about":
-        setThemeColor("#E67E22");
+        setThemeColor("rgb(230, 126, 34)");
         break;
       case "/projects":
-        setThemeColor("#27AE60");
+        setThemeColor("rgb(39, 174, 96)");
         break;
       case "/contact-me":
-        setThemeColor("#9B59B6");
+        setThemeColor("rgb(155, 89, 182)");
         break;
       default:
-        setThemeColor("#BCB6A6");
+        setThemeColor("rgb(188, 182, 166)");
         break;
     }
   }, [pathname]);
