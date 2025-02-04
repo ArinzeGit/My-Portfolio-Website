@@ -5,7 +5,6 @@ import Logo from "./Logo";
 const NavBar = () => {
   const themeColor = useThemeColor();
 
-  // Convert themeColor to RGBA format with opacity (20%)
   const backgroundColor = themeColor.includes("rgb")
     ? themeColor.replace("rgb", "rgba").replace(")", ", 0.05)")
     : themeColor;
