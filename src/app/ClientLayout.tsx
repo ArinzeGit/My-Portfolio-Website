@@ -10,11 +10,20 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   const [isFlashing, setIsFlashing] = useState(false);
 
   useEffect(() => {
-    // Trigger flashing effect when the route changes
+    // First flash
     setIsFlashing(true);
-    const timer = setTimeout(() => setIsFlashing(false), 150); // Flash duration
+    const firstTimeout = setTimeout(() => setIsFlashing(false), 100);
 
-    return () => clearTimeout(timer);
+    // Small delay before second flash
+    const secondTimeout = setTimeout(() => {
+      setIsFlashing(true);
+      setTimeout(() => setIsFlashing(false), 100);
+    }, 250); // Increased delay
+
+    return () => {
+      clearTimeout(firstTimeout);
+      clearTimeout(secondTimeout);
+    };
   }, [pathname]);
 
   return (
@@ -31,8 +40,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
               boxShadow: isFlashing
                 ? "0 0 20px 2px rgb(255,255,200)" // Glow effect
                 : "0 0", // Default glow
-              transition:
-                "background 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+              transition: "background 0.1s ease-out, box-shadow 0.15s ease-out",
             }}
           />
           <div
@@ -41,7 +49,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
               boxShadow: isFlashing
                 ? "0 0 30px 1px rgb(255,255,200)" // Flash effect
                 : "0 0 30px rgb(188,182,166)", // Normal shadow
-              transition: "box-shadow 0.15s ease-in-out",
+              transition: "box-shadow 0.15s ease-out",
             }}
           >
             <div className="absolute w-full z-10">
