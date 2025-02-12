@@ -5,14 +5,8 @@ import Logo from "./Logo";
 const NavBar = () => {
   const themeColor = useThemeColor();
 
-  const backgroundColor = themeColor.includes("rgb")
-    ? themeColor.replace("rgb", "rgba").replace(")", ", 0.05)")
-    : themeColor;
   return (
-    <div
-      className="flex justify-between items-center p-[20px] backdrop-blur-2xl transition-colors duration-300 ease-in-out"
-      style={{ backgroundColor }}
-    >
+    <div className="flex justify-between items-center p-[20px] backdrop-blur-3xl transition-colors duration-300 ease-in-out">
       <div className="flex gap-[20px] items-center">
         <div style={{ color: themeColor }}>
           <Logo />

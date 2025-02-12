@@ -3,14 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #0E1118;
-  --foreground: #FDFDFD;
+  --home-primary: rgb(52, 152, 219);
+  --about-primary: rgb(230, 126, 34);
+  --projects-primary: rgb(39, 174, 96);
+  --contact-me-primary: rgb(155, 89, 182);
+  --secondary: rgb(240, 240, 240);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar for Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color); /* Uses the injected theme color */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1F1F1F;
 }
 
 /* fonts */

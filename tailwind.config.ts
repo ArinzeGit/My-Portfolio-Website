@@ -9,8 +9,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
         homePrimary: "rgb(52, 152, 219)",
         aboutPrimary: "rgb(230, 126, 34)",
         projectsPrimary: "rgb(39, 174, 96)",
