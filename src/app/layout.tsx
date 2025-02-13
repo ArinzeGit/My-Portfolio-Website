@@ -4,7 +4,7 @@ import "./globals.css";
 import ClientLayout from "@/app/ClientLayout"; // Import the ClientLayout
 
 export const metadata: Metadata = {
-  title: "Dennings' Portfolio",
+  title: "Dennings Owoh",
   description: "Portfolio to showcase my projects",
 };
 

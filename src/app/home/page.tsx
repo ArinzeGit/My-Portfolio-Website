@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import HireMeButton from "@/components/HireMeButton";
+import TranslucentCard from "@/components/TranslucentCard";
 
 const Home = () => {
   const themeColor = useThemeColor();
@@ -16,7 +17,7 @@ const Home = () => {
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        <div className="max-w-md p-[30px] bg-homePrimary bg-opacity-[20%] backdrop-blur-3xl rounded-bl-[12px] rounded-br-[12px] rounded-none sm:rounded-tr-[12px] sm:rounded-br-[12px] sm:rounded-tl-none sm:rounded-bl-none">
+        <TranslucentCard position="left" className="max-w-md bg-homePrimary">
           <h1 className="text-secondary text-4xl sm:text-5xl font-bold mb-4 font-montserrat">
             Hi, I'm Dennings Owoh, a
             <span className="text-homePrimary"> Frontend Developer</span>
@@ -43,8 +44,12 @@ const Home = () => {
               marginTop: "50px",
             }}
           />
-        </div>
-        <div className="w-[34%] p-6 bg-homePrimary bg-opacity-[20%] backdrop-blur-3xl rounded-tl-[12px] rounded-tr-[12px] sm:rounded-tl-[12px] sm:rounded-bl-[12px] sm:rounded-none">
+        </TranslucentCard>
+
+        <TranslucentCard
+          position="right"
+          className="max-w-[34%] bg-homePrimary"
+        >
           <p className="text-secondary text-lg sm:text-xl leading-relaxed font-montserrat">
             <span className="block text-3xl sm:text-4xl font-bold italic">
               Where imagination meets{" "}
@@ -55,7 +60,7 @@ const Home = () => {
               <span className="text-homePrimary">reality.</span>
             </span>
           </p>
-        </div>
+        </TranslucentCard>
       </div>
     </div>
   );
