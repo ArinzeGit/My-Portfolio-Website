@@ -43,7 +43,7 @@ const About = () => {
             href="https://github.com/ArinzeGit"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-aboutPrimary underline hover:text-opacity-80 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            className="inline-flex items-center gap-2 mt-4 text-aboutPrimary underline hover:text-opacity-80 transition"
             aria-label="Visit my GitHub profile"
           >
             <svg
