@@ -39,11 +39,11 @@ const About = () => {
             speed—qualities I now channel into delivering high-quality code and
             innovative designs.
           </p>
-          <a
+          <Link
             href="https://github.com/ArinzeGit"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-aboutPrimary underline hover:text-opacity-80 transition"
+            className="inline-flex items-center gap-2 mt-4 text-aboutPrimary underline hover:text-opacity-80 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
             aria-label="Visit my GitHub profile"
           >
             <svg
@@ -59,7 +59,7 @@ const About = () => {
               />
             </svg>
             Visit my GitHub
-          </a>
+          </Link>
         </div>
 
         <div className="max-w-md p-[30px] bg-aboutPrimary bg-opacity-[20%] backdrop-blur-3xl rounded-tl-[12px] rounded-tr-[12px] sm:rounded-tl-[12px] sm:rounded-bl-[12px] sm:rounded-none">
