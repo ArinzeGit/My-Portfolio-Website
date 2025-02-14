@@ -25,6 +25,7 @@ const About = () => {
               alt="Professional image"
               fill
               className="object-cover transition-transform duration-500 ease-out hover:scale-110"
+              priority
             />
           </div>
           <p className="mt-[30px]">
