@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/app/context/ThemeContext";
 import NavBar from "@/components/NavBar";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import updateFavicon from "@/utils/UpdateFavicon";
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -11,6 +12,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     setIsFlashing(true);
+    updateFavicon(); // Update favicon when the route changes
     const timeout = setTimeout(() => setIsFlashing(false), 300);
 
     return () => clearTimeout(timeout);
