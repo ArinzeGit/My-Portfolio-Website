@@ -4,12 +4,13 @@ const updateFavicon = () => {
     const pathname = window.location.pathname;
     const rootStyles = getComputedStyle(document.documentElement);
   
-    let color = "rgb(52, 152, 219)"; // Default to home color
+    let color;
   
-    if (pathname.includes("/about")) color = rootStyles.getPropertyValue("--about-primary").trim();
+    if (pathname.includes("/home")) color = rootStyles.getPropertyValue("--home-primary").trim();
+    else if (pathname.includes("/about")) color = rootStyles.getPropertyValue("--about-primary").trim();
     else if (pathname.includes("/projects")) color = rootStyles.getPropertyValue("--projects-primary").trim();
     else if (pathname.includes("/contact")) color = rootStyles.getPropertyValue("--contact-me-primary").trim();
-    else color = rootStyles.getPropertyValue("--home-primary").trim();
+    else color = rootStyles.getPropertyValue("--neutral").trim();
   
     const svg = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
@@ -21,7 +22,7 @@ const updateFavicon = () => {
     const svgBlob = new Blob([svg], { type: "image/svg+xml" });
     const url = URL.createObjectURL(svgBlob);
   
-    const favicon = document.getElementById("favicon") as HTMLLinkElement;
+    const favicon = document.querySelector("link[rel='icon']") as HTMLLinkElement;
     if (favicon) {
       favicon.href = url;
     }

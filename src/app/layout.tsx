@@ -6,6 +6,24 @@ import ClientLayout from "@/app/ClientLayout"; // Import the ClientLayout
 export const metadata: Metadata = {
   title: "Dennings Owoh",
   description: "Portfolio to showcase my projects",
+  icons: {
+    icon: [
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        url: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        url: "/favicon-16x16.png",
+      },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -13,17 +31,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <>
-      <head>
-        <link
-          id="favicon"
-          rel="icon"
-          type="image/svg+xml"
-          href="/favicon.svg"
-        />
-      </head>
-      <ClientLayout>{children}</ClientLayout>
-    </>
-  );
+  return <ClientLayout>{children}</ClientLayout>;
 }
