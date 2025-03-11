@@ -6,7 +6,7 @@ import Link from "next/link";
 
 interface Project {
   title: string;
-  image: string;
+  videoDemo: string;
   description: string;
   techStack: string[];
   github: string;
@@ -15,74 +15,48 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Bouncing Battle",
-    image: "/images/BouncingBattleScreenshot.png", // Replace with a real image
+    title: "Bouncing Battle Game",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
       "A web-based multiplayer PC game with power-ups and obstacles.",
     techStack: ["JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/yourusername/bouncing-battle",
+    github: "https://github.com/ArinzeGit/Bouncing-Battle/",
     live: "https://arinzegit.github.io/Bouncing-Battle-Game/",
   },
   {
     title: "Multi-Step Form",
-    image: "/images/MultiStepFormScreenshot.png",
-    description: "A React-TS multi-step form with custom hooks and unit tests.",
-    techStack: ["React", "TypeScript", "Tailwind", "Vitest"],
-    github: "https://github.com/yourusername/multi-step-form",
-    live: "https://multi-step-form.vercel.app",
-  },
-  {
-    title: "Bouncing Battle1",
-    image: "/images/BouncingBattleScreenshot.png", // Replace with a real image
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
-      "A web-based multiplayer PC game with power-ups and obstacles.",
-    techStack: ["JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/yourusername/bouncing-battle",
-    live: "https://bouncing-battle.vercel.app",
-  },
-  {
-    title: "Multi-Step Form1",
-    image: "/images/MultiStepFormScreenshot.png",
-    description: "A React-TS multi-step form with custom hooks and unit tests.",
+      "A dynamic multi-step form with custom hooks, validation, smooth navigation and unit tests.",
     techStack: ["React", "TypeScript", "Tailwind", "Vitest"],
-    github: "https://github.com/yourusername/multi-step-form",
-    live: "https://multi-step-form.vercel.app",
+    github: "https://github.com/ArinzeGit/Multi-Step-Form",
+    live: "https://arinzegit.github.io/Multi-step-Form/",
   },
   {
-    title: "Bouncing Battle2",
-    image: "/images/BouncingBattleScreenshot.png", // Replace with a real image
+    title: "Portfolio Website",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
-      "A web-based multiplayer PC game with power-ups and obstacles.",
-    techStack: ["JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/yourusername/bouncing-battle",
-    live: "https://bouncing-battle.vercel.app",
+      "A sleek personal portfolio showcasing my projects, skills, and achievements.",
+    techStack: ["Next.js", "TypeScript", "Tailwind"],
+    github: "https://github.com/ArinzeGit/My-Portfolio-Website",
+    live: "https://arinzegit.github.io/My-Portfolio-Website/",
   },
   {
-    title: "Multi-Step Form2",
-    image: "/images/MultiStepFormScreenshot.png",
-    description: "A React-TS multi-step form with custom hooks and unit tests.",
-    techStack: ["React", "TypeScript", "Tailwind", "Vitest"],
-    github: "https://github.com/yourusername/multi-step-form",
-    live: "https://multi-step-form.vercel.app",
-  },
-  {
-    title: "Bouncing Battle3",
-    image: "/images/BouncingBattleScreenshot.png", // Replace with a real image
+    title: "IP Address Tracker",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
-      "A web-based multiplayer PC game with power-ups and obstacles.",
-    techStack: ["JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/yourusername/bouncing-battle",
-    live: "https://bouncing-battle.vercel.app",
+      "A A web tool that locates and visualizes IP addresses on an interactive map.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Leaflet Js",
+      "React Leaflet",
+      "IP Geolocation API by Ipify",
+    ],
+    github: "https://github.com/ArinzeGit/IP-Address-Tracker",
+    live: "https://arinzegit.github.io/IP-Address-Tracker/",
   },
-  {
-    title: "Multi-Step Form3",
-    image: "/images/MultiStepFormScreenshot.png",
-    description: "A React-TS multi-step form with custom hooks and unit tests.",
-    techStack: ["React", "TypeScript", "Tailwind", "Vitest"],
-    github: "https://github.com/yourusername/multi-step-form",
-    live: "https://multi-step-form.vercel.app",
-  },
-  // Add more projects...
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -91,17 +65,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="w-full p-4 text-center">
         <h3 className="text-lg font-semibold">{project.title}</h3>
       </div>
-      <div className="group w-full flex-1 [perspective:1000px]">
+      <div className="w-full flex-1 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
           {/* Front Side */}
           <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center">
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={1920}
-              height={1038}
-              className="w-full shadow-lg"
-            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              width="300"
+              height="200"
+              className="rounded-md shadow-lg"
+            >
+              <source src={project.videoDemo} type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
           </div>
           {/* Back Side */}
           <div className="absolute w-full h-full flex flex-col justify-center items-center px-4 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
@@ -150,7 +129,7 @@ const Projects = () => {
         }}
       >
         {projects.map((project, index) => (
-          <TranslucentCard className="bg-projectsPrimary">
+          <TranslucentCard className="bg-projectsPrimary group">
             <ProjectCard key={index} project={project} />
           </TranslucentCard>
         ))}
