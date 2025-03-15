@@ -31,11 +31,11 @@ const About = () => {
           <p className="mt-[30px]">
             From solving complex mathematical problems to crafting sleek,
             interactive web applications, I thrive on turning challenges into
-            opportunities. Whether it's building a multiplayer game in Vanilla
-            JavaScript or developing tested, scalable applications in Next.js, I
-            specialize in creating user-friendly solutions that bring ideas to
-            life. As a national mathematics and speedcubing champion, my
-            problem-solving skills are matched by a knack for precision and
+            opportunities. Whether it&apos;s building a multiplayer game in
+            Vanilla JavaScript or developing tested, scalable applications in
+            Next.js, I specialize in creating user-friendly solutions that bring
+            ideas to life. As a national mathematics and speedcubing champion,
+            my problem-solving skills are matched by a knack for precision and
             speed—qualities I now channel into delivering high-quality code and
             innovative designs.
           </p>

@@ -33,7 +33,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
         setThemeColor(rootStyles.getPropertyValue("--neutral").trim());
         break;
     }
-  }, [pathname]);
+  }, [pathname, rootStyles]);
 
   return (
     <ThemeContext.Provider value={themeColor}>{children}</ThemeContext.Provider>

@@ -1,7 +1,6 @@
 "use client";
 import { useThemeColor } from "@/app/context/ThemeContext";
 import TranslucentCard from "@/components/TranslucentCard";
-import Image from "next/image";
 import Link from "next/link";
 
 interface Project {
@@ -129,8 +128,8 @@ const Projects = () => {
         }}
       >
         {projects.map((project, index) => (
-          <TranslucentCard className="bg-projectsPrimary group">
-            <ProjectCard key={index} project={project} />
+          <TranslucentCard className="bg-projectsPrimary group" key={index}>
+            <ProjectCard project={project} />
           </TranslucentCard>
         ))}
       </div>
