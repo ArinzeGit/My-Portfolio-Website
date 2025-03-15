@@ -24,6 +24,7 @@ const About = () => {
               src="/images/arinze in suit.jpg"
               alt="Professional image"
               fill
+              sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 400px"
               className="object-cover transition-transform duration-500 ease-out hover:scale-110"
               priority
             />
