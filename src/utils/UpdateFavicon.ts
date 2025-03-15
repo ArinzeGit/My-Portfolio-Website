@@ -1,4 +1,3 @@
-"use client";
 const updateFavicon = () => {
     if (typeof window === "undefined") return;
   

@@ -1,5 +1,3 @@
-// context/ThemeContext.tsx
-"use client";
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
@@ -9,32 +7,31 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const pathname = usePathname();
-  const rootStyles = getComputedStyle(document.documentElement);
-  const [themeColor, setThemeColor] = useState<string>(
-    rootStyles.getPropertyValue("--neutral").trim()
-  );
+  const [themeColor, setThemeColor] = useState<string>("");
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // Ensure it's running on the client
+
+    const rootStyles = getComputedStyle(document.documentElement);
+    let color = rootStyles.getPropertyValue("--neutral").trim();
+
     switch (pathname) {
       case "/home":
-        setThemeColor(rootStyles.getPropertyValue("--home-primary").trim());
+        color = rootStyles.getPropertyValue("--home-primary").trim();
         break;
       case "/about":
-        setThemeColor(rootStyles.getPropertyValue("--about-primary").trim());
+        color = rootStyles.getPropertyValue("--about-primary").trim();
         break;
       case "/projects":
-        setThemeColor(rootStyles.getPropertyValue("--projects-primary").trim());
+        color = rootStyles.getPropertyValue("--projects-primary").trim();
         break;
       case "/contact-me":
-        setThemeColor(
-          rootStyles.getPropertyValue("--contact-me-primary").trim()
-        );
-        break;
-      default:
-        setThemeColor(rootStyles.getPropertyValue("--neutral").trim());
+        color = rootStyles.getPropertyValue("--contact-me-primary").trim();
         break;
     }
-  }, [pathname, rootStyles]);
+
+    setThemeColor(color);
+  }, [pathname]);
 
   return (
     <ThemeContext.Provider value={themeColor}>{children}</ThemeContext.Provider>
