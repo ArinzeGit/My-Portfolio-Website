@@ -63,6 +63,7 @@ const projects: Project[] = [
       "Tailwind",
       "React Testing Library",
       "Vitest",
+      "Figma",
     ],
     github: "https://github.com/ArinzeGit/Multi-Step-Form",
     live: "https://arinzegit.github.io/Multi-step-Form/",
