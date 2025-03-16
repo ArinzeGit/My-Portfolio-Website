@@ -19,8 +19,12 @@ const Home = () => {
       >
         <TranslucentCard position="left" className="max-w-md bg-homePrimary">
           <h1 className="text-secondary text-4xl sm:text-5xl font-bold mb-4 font-montserrat">
-            Hi, I&apos;m Dennings Owoh, a
-            <span className="text-homePrimary"> Frontend Developer</span>
+            Hi, I&apos;m
+            <span className="text-gray-400 italic"> Dennings Owoh </span>, a
+            <span className="text-homePrimary italic"> Frontend </span>
+            Developer and
+            <span className="text-homePrimary italic"> Game </span>
+            Developer
           </h1>
           {/* Icons for GitHub, Email */}
           <div className="mt-6 flex items-center gap-10">
