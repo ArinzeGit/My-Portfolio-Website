@@ -21,7 +21,7 @@ const About = () => {
         <div className="max-w-md p-[30px] overflow-hidden bg-aboutPrimary bg-opacity-[20%] backdrop-blur-3xl rounded-bl-[12px] rounded-br-[12px] rounded-none sm:rounded-tr-[12px] sm:rounded-br-[12px] sm:rounded-tl-none sm:rounded-bl-none">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto overflow-hidden rounded-full border-[4px] border-aboutPrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
             <Image
-              src="/images/arinze in suit.jpg"
+              src="/images/arinze-in-suit.jpg"
               alt="Professional image"
               fill
               sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 400px"
