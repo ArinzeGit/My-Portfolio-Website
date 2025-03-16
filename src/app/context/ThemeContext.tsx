@@ -7,7 +7,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const pathname = usePathname();
-  const [themeColor, setThemeColor] = useState<string>("");
+  const [themeColor, setThemeColor] = useState<string>("rgb(188, 182, 166)");
 
   useEffect(() => {
     if (typeof window === "undefined") return; // Ensure it's running on the client
