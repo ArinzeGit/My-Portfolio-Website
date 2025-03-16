@@ -56,6 +56,22 @@ const projects: Project[] = [
     github: "https://github.com/ArinzeGit/IP-Address-Tracker",
     live: "https://arinzegit.github.io/IP-Address-Tracker/",
   },
+  {
+    title: "IP Address Tracker",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    description:
+      "A A web tool that locates and visualizes IP addresses on an interactive map.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Leaflet Js",
+      "React Leaflet",
+      "IP Geolocation API by Ipify",
+    ],
+    github: "https://github.com/ArinzeGit/IP-Address-Tracker",
+    live: "https://arinzegit.github.io/IP-Address-Tracker/",
+  },
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
