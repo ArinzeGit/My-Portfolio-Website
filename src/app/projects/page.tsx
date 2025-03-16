@@ -8,7 +8,7 @@ interface Project {
   videoDemo: string;
   description: string;
   techStack: string[];
-  github: string;
+  github?: string;
   live: string;
 }
 
@@ -35,8 +35,7 @@ const projects: Project[] = [
       "Azure",
       "Figma",
     ],
-    github: "",
-    live: "",
+    live: "https://student-paddy-website.vercel.app/",
   },
   {
     title: "Student Paddy Admin Dashboard",
@@ -51,7 +50,6 @@ const projects: Project[] = [
       "D3.js",
       "Figma",
     ],
-    github: "",
     live: "",
   },
   {
@@ -91,7 +89,7 @@ const projects: Project[] = [
       "A sleek personal portfolio showcasing my projects, skills, and achievements.",
     techStack: ["Next.js", "TypeScript", "Tailwind"],
     github: "https://github.com/ArinzeGit/My-Portfolio-Website",
-    live: "",
+    live: "https://my-portfolio-website-silk-five.vercel.app/",
   },
 ];
 
@@ -132,13 +130,15 @@ const ProjectCard = ({ project }: { project: Project }) => {
               ))}
             </div>
             <div className="mt-4 flex gap-4">
-              <Link
-                href={project.github}
-                target="_blank"
-                className="text-blue-400 hover:underline"
-              >
-                GitHub
-              </Link>
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  className="text-blue-400 hover:underline"
+                >
+                  GitHub
+                </Link>
+              )}
               <Link
                 href={project.live}
                 target="_blank"
