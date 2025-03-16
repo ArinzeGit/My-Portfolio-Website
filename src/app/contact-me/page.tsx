@@ -7,14 +7,19 @@ const ContactMe = () => {
   return (
     <div className="bg-[url('/images/contact-me-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin flex items-center justify-center"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        <TranslucentCard className="text-[80px] bg-contactMePrimary">
-          <p>This page is coming soon</p>
-        </TranslucentCard>
+        <div className="h-[165%] flex flex-col justify-evenly items-center">
+          <TranslucentCard className="text-[80px] bg-contactMePrimary">
+            <p>This page is coming soon</p>
+          </TranslucentCard>
+          <TranslucentCard className="text-[80px] bg-contactMePrimary">
+            <p>This page is coming soon</p>
+          </TranslucentCard>
+        </div>
       </div>
     </div>
   );
