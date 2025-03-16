@@ -23,54 +23,75 @@ const projects: Project[] = [
     live: "https://arinzegit.github.io/Bouncing-Battle-Game/",
   },
   {
+    title: "Student Paddy Website",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    description:
+      "Migrated Student Paddy’s website from React to Next.js 14, improving performance, SEO, design and scalability.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Nodemailer",
+      "Azure",
+      "Figma",
+    ],
+    github: "",
+    live: "",
+  },
+  {
+    title: "Student Paddy Admin Dashboard",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    description:
+      "An admin dashboard for universities to track student career readiness on the Student Paddy digital campus.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind",
+      "Chart.js",
+      "D3.js",
+      "Figma",
+    ],
+    github: "",
+    live: "",
+  },
+  {
     title: "Multi-Step Form",
     videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
-      "A dynamic multi-step form with custom hooks, validation, smooth navigation and unit tests.",
-    techStack: ["React", "TypeScript", "Tailwind", "Vitest"],
+      "A dynamic multi-step form with custom hooks, unit tests, validation, and smooth navigation.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "React Testing Library",
+      "Vitest",
+    ],
     github: "https://github.com/ArinzeGit/Multi-Step-Form",
     live: "https://arinzegit.github.io/Multi-step-Form/",
   },
   {
-    title: "Portfolio Website",
+    title: "IP Address Tracker",
+    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    description:
+      "A web tool that locates and visualizes IP addresses on an interactive map.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Leaflet.js",
+      "React Leaflet",
+      "IP Geolocation API by Ipify",
+    ],
+    github: "https://github.com/ArinzeGit/IP-Address-Tracker",
+    live: "https://arinzegit.github.io/IP-Address-Tracker/",
+  },
+  {
+    title: "My Portfolio Website",
     videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
       "A sleek personal portfolio showcasing my projects, skills, and achievements.",
     techStack: ["Next.js", "TypeScript", "Tailwind"],
     github: "https://github.com/ArinzeGit/My-Portfolio-Website",
-    live: "https://arinzegit.github.io/My-Portfolio-Website/",
-  },
-  {
-    title: "IP Address Tracker",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
-    description:
-      "A A web tool that locates and visualizes IP addresses on an interactive map.",
-    techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind",
-      "Leaflet Js",
-      "React Leaflet",
-      "IP Geolocation API by Ipify",
-    ],
-    github: "https://github.com/ArinzeGit/IP-Address-Tracker",
-    live: "https://arinzegit.github.io/IP-Address-Tracker/",
-  },
-  {
-    title: "IP Address Tracker",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
-    description:
-      "A A web tool that locates and visualizes IP addresses on an interactive map.",
-    techStack: [
-      "React",
-      "TypeScript",
-      "Tailwind",
-      "Leaflet Js",
-      "React Leaflet",
-      "IP Geolocation API by Ipify",
-    ],
-    github: "https://github.com/ArinzeGit/IP-Address-Tracker",
-    live: "https://arinzegit.github.io/IP-Address-Tracker/",
+    live: "",
   },
 ];
 
