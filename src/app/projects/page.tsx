@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "Bouncing Battle Game",
     videoDemo: "/videos/bouncing-battle-gameplay.webm",
     description:
-      "A web-based multiplayer PC game with power-ups and obstacles.",
+      "A web-based multiplayer PC game with immersive sound effects and complex ball-deflection logic.",
     techStack: ["JavaScript", "HTML5", "CSS"],
     github: "https://github.com/ArinzeGit/Bouncing-Battle/",
     live: "https://arinzegit.github.io/Bouncing-Battle-Game/",
