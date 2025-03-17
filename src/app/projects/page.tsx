@@ -50,7 +50,7 @@ const projects: Project[] = [
       "D3.js",
       "Figma",
     ],
-    live: "",
+    live: "https://student-paddy-admin-dashboard.vercel.app/",
   },
   {
     title: "Multi-Step Form",
