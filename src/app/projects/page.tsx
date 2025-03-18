@@ -14,17 +14,8 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Bouncing Battle Game",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
-    description:
-      "A web-based multiplayer PC game with immersive sound effects and complex ball-deflection logic.",
-    techStack: ["JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/ArinzeGit/Bouncing-Battle/",
-    live: "https://arinzegit.github.io/Bouncing-Battle-Game/",
-  },
-  {
     title: "Student Paddy Website",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    videoDemo: "/videos/student-paddy-website-video.webm",
     description:
       "Migrated Student Paddy’s website from React to Next.js 14, improving performance, SEO, design and scalability.",
     techStack: [
@@ -39,7 +30,7 @@ const projects: Project[] = [
   },
   {
     title: "Student Paddy Admin Dashboard",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    videoDemo: "/videos/student-paddy-admin-dashboard-video.webm",
     description:
       "An admin dashboard for universities to track student career readiness on the Student Paddy digital campus.",
     techStack: [
@@ -53,8 +44,17 @@ const projects: Project[] = [
     live: "https://student-paddy-admin-dashboard.vercel.app/",
   },
   {
+    title: "Bouncing Battle Game",
+    videoDemo: "/videos/bouncing-battle-game-video.webm",
+    description:
+      "A web-based multiplayer PC game with immersive sound effects and complex ball-deflection logic.",
+    techStack: ["JavaScript", "HTML5", "CSS"],
+    github: "https://github.com/ArinzeGit/Bouncing-Battle/",
+    live: "https://arinzegit.github.io/Bouncing-Battle-Game/",
+  },
+  {
     title: "Multi-Step Form",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    videoDemo: "/videos/multi-step-form-video.webm",
     description:
       "A dynamic multi-step form with custom hooks, unit tests, validation, and smooth navigation.",
     techStack: [
@@ -70,7 +70,7 @@ const projects: Project[] = [
   },
   {
     title: "IP Address Tracker",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    videoDemo: "/videos/ip-address-tracker-video.webm",
     description:
       "A web tool that locates and visualizes IP addresses on an interactive map.",
     techStack: [
@@ -85,7 +85,7 @@ const projects: Project[] = [
   },
   {
     title: "My Portfolio Website",
-    videoDemo: "/videos/bouncing-battle-gameplay.webm",
+    videoDemo: "/videos/my-portfolio-website-video.webm",
     description:
       "A sleek personal portfolio showcasing my projects, skills, and achievements.",
     techStack: ["Next.js", "TypeScript", "Tailwind"],
