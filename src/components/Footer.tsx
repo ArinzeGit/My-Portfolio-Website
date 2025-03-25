@@ -128,14 +128,17 @@ const Footer = () => {
     };
   }, []);
 
+  let backgroundColor = themeColor
+    .replace("rgb", "rgba")
+    .replace(")", ", 0.1)");
+  console.log(backgroundColor);
+
   return (
     <canvas
       ref={canvasRef}
       className=" rounded-[20px] backdrop-blur-md border border-[rgb(188,182,166)]"
       style={{
-        backgroundColor: themeColor
-          .replace("rgb", "rgba")
-          .replace(")", ", 0.1)"),
+        backgroundColor: backgroundColor,
       }}
     />
   );
