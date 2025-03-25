@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import updateFavicon from "@/utils/UpdateFavicon";
+import Footer from "@/components/Footer";
 
 const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className="antialiased bg-[url('/images/portfolio-background.webp')] bg-cover bg-center min-h-[100vh] p-[25px] flex justify-center items-center text-secondary">
+        <body className="antialiased bg-[url('/images/portfolio-background.webp')] bg-cover bg-center min-h-[100vh] p-[25px] flex flex-col justify-center items-center gap-y-[40px] text-secondary">
           {/* Flashing Horizontal Line */}
           <div
             className={`absolute left-0 w-full h-[2px] top-[65vh] transition-shadow duration-500 bg-[rgb(255,255,200)] ${
@@ -43,6 +44,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
             {children}
           </div>
+          <Footer />
         </body>
       </ThemeProvider>
     </html>

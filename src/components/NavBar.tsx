@@ -6,7 +6,7 @@ const NavBar = () => {
   const themeColor = useThemeColor();
 
   return (
-    <div className="flex justify-between items-center p-[20px] backdrop-blur-3xl transition-colors duration-300 ease-in-out">
+    <nav className="flex justify-between items-center p-[20px] backdrop-blur-3xl transition-colors duration-300 ease-in-out">
       <div className="flex gap-[20px] items-center">
         <div style={{ color: themeColor }}>
           <Logo />
@@ -21,7 +21,7 @@ const NavBar = () => {
         <NavLink label="PROJECTS" href="/projects" />
         <NavLink label="CONTACT ME" href="/contact-me" />
       </div>
-    </div>
+    </nav>
   );
 };
 
