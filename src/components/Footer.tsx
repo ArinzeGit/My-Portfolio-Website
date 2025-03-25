@@ -128,9 +128,7 @@ const Footer = () => {
     };
   }, []);
 
-  const backgroundColor = themeColor
-    .replace("rgb", "rgba")
-    .replace(")", ", 0.1)");
+  const backgroundColor = `rgba(${themeColor.match(/\d+/g)?.join(", ")}, 0.1)`;
 
   return (
     <canvas
