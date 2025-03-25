@@ -21,7 +21,7 @@ const Footer = () => {
     canvas.width = 550;
     canvas.height = 38;
 
-    let box1 = {
+    const box1 = {
       x: 10,
       y: 4,
       width: 192,
@@ -30,7 +30,7 @@ const Footer = () => {
       text: "Designed and built",
     };
 
-    let box2 = {
+    const box2 = {
       x: 250,
       y: 4,
       width: 135,
@@ -39,7 +39,7 @@ const Footer = () => {
       text: "from scratch,",
     };
 
-    let box3 = {
+    const box3 = {
       x: 420,
       y: 4,
       width: 77,
@@ -48,7 +48,14 @@ const Footer = () => {
       text: "by me.",
     };
 
-    function drawBox(box: any) {
+    function drawBox(box: {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      speed: number;
+      text: string;
+    }) {
       // Add glow effect
       ctx.shadowBlur = 8;
       ctx.shadowColor = "rgb(188,182,166)";
