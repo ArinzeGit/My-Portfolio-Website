@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useThemeColor } from "@/app/context/ThemeContext";
 
 const Footer = () => {
@@ -128,17 +128,20 @@ const Footer = () => {
     };
   }, []);
 
-  const backgroundColor = `rgba(${themeColorRef.current.replace(
-    /[^\d,]/g,
-    ""
-  )}, 0.1)`;
+  const [bgColor, setBgColor] = useState("rgba(0,0,0,0.1)");
+
+  useEffect(() => {
+    if (themeColor) {
+      setBgColor(`rgba(${themeColor.replace(/[^\d,]/g, "")}, 0.1)`);
+    }
+  }, [themeColor]);
 
   return (
     <canvas
       ref={canvasRef}
       className=" rounded-[20px] backdrop-blur-md border border-[rgb(188,182,166)]"
       style={{
-        backgroundColor: backgroundColor,
+        backgroundColor: bgColor,
       }}
     />
   );
