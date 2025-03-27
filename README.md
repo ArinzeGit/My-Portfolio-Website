@@ -20,5 +20,5 @@ This is my personal portfolio website showcasing my frontend development and gam
 ## 📬 Contact
 
 - Email: [arinzeowoh@gmail.com](mailto:arinzeowoh@gmail.com)
-- GitHub: [github.com/ArinzeGit](https://github.com/yourusername)
+- GitHub: [github.com/ArinzeGit](https://github.com/ArinzeGit)
 - LinkedIn: [linkedin.com/in/dennings-owoh](https://www.linkedin.com/in/dennings-owoh/)
