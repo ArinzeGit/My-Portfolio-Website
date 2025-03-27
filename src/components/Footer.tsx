@@ -130,7 +130,7 @@ const Footer = () => {
     };
   }, []);
 
-  const [bgColor, setBgColor] = useState("rgba(0,0,0,0.1)");
+  const [bgColor, setBgColor] = useState("rgba(188, 182, 166, 0.1)");
   const bgColorRef = useRef(bgColor); // Store latest bgColor
 
   // Update bgColorRef when bgColor changes
@@ -143,6 +143,11 @@ const Footer = () => {
       setBgColor(`rgba(${themeColor.replace(/[^\d,]/g, "")}, 0.1)`);
     }
   }, [themeColor]);
+
+  useEffect(() => {
+    console.log("ThemeColor:", themeColor);
+    console.log("Background Color:", bgColor);
+  }, [themeColor, bgColor]);
 
   return (
     <canvas
