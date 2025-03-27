@@ -15,7 +15,7 @@ This is my personal portfolio website showcasing my frontend development and gam
 
 ## 🔗 Live Demo
 
-[Visit my portfolio](https://my-portfolio-website-silk-five.vercel.app/contact-me)
+[Visit my portfolio](https://my-portfolio-website-silk-five.vercel.app/)
 
 ## 📬 Contact
 
