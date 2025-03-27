@@ -72,7 +72,7 @@ const Footer = () => {
 
       // Reset shadow for text
       ctx.shadowBlur = 0;
-      ctx.fillStyle = themeColorRef.current;
+      ctx.fillStyle = themeColorRef.current; // We must use a reference to access the themeColor state within canvas
       ctx.font = "18px Montserrat, sans-serif";
       ctx.fillText(box.text, box.x + 10, box.y + 22);
     }
@@ -113,6 +113,8 @@ const Footer = () => {
       if (box2.x <= 0 || box2.x + box2.width >= canvas.width) box2.speed *= -1;
       if (box3.x <= 0 || box3.x + box3.width >= canvas.width) box3.speed *= -1;
 
+      ctx.fillStyle = bgColorRef.current; // We must use a reference to access the bgColor state within canvas
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
       drawBox(box1);
       drawBox(box2);
       drawBox(box3);
@@ -129,6 +131,12 @@ const Footer = () => {
   }, []);
 
   const [bgColor, setBgColor] = useState("rgba(0,0,0,0.1)");
+  const bgColorRef = useRef(bgColor); // Store latest bgColor
+
+  // Update bgColorRef when bgColor changes
+  useEffect(() => {
+    bgColorRef.current = bgColor;
+  }, [bgColor]);
 
   useEffect(() => {
     if (themeColor) {
@@ -140,9 +148,6 @@ const Footer = () => {
     <canvas
       ref={canvasRef}
       className=" rounded-[20px] backdrop-blur-md border border-[rgb(188,182,166)]"
-      style={{
-        backgroundColor: bgColor,
-      }}
     />
   );
 };
