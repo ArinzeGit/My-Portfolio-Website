@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useThemeColor } from "@/app/context/ThemeContext";
+import { hexToRgb } from "@/utils/colorUtils";
 
 const Footer = () => {
   const themeColor = useThemeColor();
@@ -140,14 +141,12 @@ const Footer = () => {
 
   useEffect(() => {
     if (themeColor) {
-      setBgColor(`rgba(${themeColor.replace(/[^\d,]/g, "")}, 0.1)`);
+      const rgbColor = themeColor.startsWith("#")
+        ? hexToRgb(themeColor)
+        : themeColor;
+      setBgColor(`rgba(${rgbColor.replace(/[^\d,]/g, "")}, 0.1)`);
     }
   }, [themeColor]);
-
-  useEffect(() => {
-    console.log("ThemeColor:", themeColor);
-    console.log("Background Color:", bgColor);
-  }, [themeColor, bgColor]);
 
   return (
     <canvas
