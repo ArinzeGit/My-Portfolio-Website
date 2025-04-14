@@ -1,5 +1,6 @@
 "use client";
 import { useThemeColor } from "@/app/context/ThemeContext";
+import HireMeButton from "@/components/HireMeButton";
 import TranslucentCard from "@/components/TranslucentCard";
 import Link from "next/link";
 
@@ -160,16 +161,19 @@ const Projects = () => {
   return (
     <div className="bg-[url('/images/projects-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin p-[85px] flex flex-wrap gap-8 justify-center"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin p-[85px] flex flex-col items-center"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        {projects.map((project, index) => (
-          <TranslucentCard className="bg-projectsPrimary group" key={index}>
-            <ProjectCard project={project} />
-          </TranslucentCard>
-        ))}
+        <div className="flex flex-wrap gap-8 justify-center">
+          {projects.map((project, index) => (
+            <TranslucentCard className="bg-projectsPrimary group" key={index}>
+              <ProjectCard project={project} />
+            </TranslucentCard>
+          ))}
+        </div>
+        <HireMeButton className="bg-[var(--projects-primary)]" />
       </div>
     </div>
   );

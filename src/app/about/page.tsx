@@ -4,13 +4,14 @@ import { useThemeColor } from "@/app/context/ThemeContext";
 import { FaMedal } from "react-icons/fa";
 import HireMeButton from "@/components/HireMeButton";
 import Link from "next/link";
+import TranslucentCard from "@/components/TranslucentCard";
 
 const About = () => {
   const themeColor = useThemeColor();
   return (
     <div className="  bg-[url('/images/about-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin flex flex-col sm:flex-row justify-between gap-[40px] items-start py-[85px] text-secondary text-xl leading-loose"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[85px] flex flex-col sm:flex-row justify-between gap-[40px] items-start text-secondary text-xl leading-loose"
         style={
           {
             "--theme-color": themeColor, // Inject theme color as a CSS variable which will be used in globals.css to set thumb color and track color for safari
@@ -18,7 +19,7 @@ const About = () => {
           } as React.CSSProperties // Fix TypeScript error
         }
       >
-        <div className="max-w-md p-[30px] overflow-hidden bg-aboutPrimary bg-opacity-[20%] backdrop-blur-3xl rounded-bl-[12px] rounded-br-[12px] rounded-none sm:rounded-tr-[12px] sm:rounded-br-[12px] sm:rounded-tl-none sm:rounded-bl-none">
+        <TranslucentCard position="left" className="max-w-md bg-aboutPrimary">
           <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto overflow-hidden rounded-full border-[4px] border-aboutPrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
             <Image
               src="/images/arinze-in-suit.jpg"
@@ -61,9 +62,9 @@ const About = () => {
             </svg>
             Visit my GitHub
           </Link>
-        </div>
+        </TranslucentCard>
 
-        <div className="max-w-md p-[30px] bg-aboutPrimary bg-opacity-[20%] backdrop-blur-3xl rounded-tl-[12px] rounded-tr-[12px] sm:rounded-tl-[12px] sm:rounded-bl-[12px] sm:rounded-none">
+        <TranslucentCard position="right" className="max-w-md bg-aboutPrimary">
           <h2 className="text-aboutPrimary text-3xl font-bold mb-4">
             Technologies I Excel In
           </h2>
@@ -177,13 +178,8 @@ const About = () => {
             </Link>{" "}
             in the Nigeria Open 2019, where I set two national records.
           </p>
-          <HireMeButton
-            style={{
-              backgroundColor: "var(--about-primary)",
-              marginTop: "50px",
-            }}
-          ></HireMeButton>
-        </div>
+          <HireMeButton className="bg-[var(--about-primary)]" />
+        </TranslucentCard>
       </div>
     </div>
   );

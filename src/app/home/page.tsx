@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className="bg-[url('/images/home-page-background.webp')] bg-top bg-cover min-h-full pt-[85px]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin flex flex-col sm:flex-row justify-between gap-[40px] items-center"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[10px] flex flex-col sm:flex-row justify-between gap-[40px] items-center"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
@@ -42,12 +42,7 @@ const Home = () => {
               <FontAwesomeIcon icon={faEnvelope} className="w-10 h-10" />
             </Link>
           </div>
-          <HireMeButton
-            style={{
-              backgroundColor: "var(--home-primary)",
-              marginTop: "50px",
-            }}
-          />
+          <HireMeButton className="bg-[var(--home-primary)]" />
         </TranslucentCard>
 
         <TranslucentCard
