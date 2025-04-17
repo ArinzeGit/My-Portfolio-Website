@@ -66,7 +66,11 @@ const ContactMe = () => {
           <h2 className="text-3xl font-bold self-center">Get in Touch</h2>
           <TranslucentCard className="bg-contactMePrimary relative">
             <ErrorText text={error.name} />
+            <label htmlFor="name" className="sr-only">
+              Full Name
+            </label>
             <input
+              id="name"
               value={formInput.name}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, name: e.target.value }));
@@ -85,7 +89,11 @@ const ContactMe = () => {
           </TranslucentCard>
           <TranslucentCard className="bg-contactMePrimary relative">
             <ErrorText text={error.email} />
+            <label htmlFor="email" className="sr-only">
+              Email
+            </label>
             <input
+              id="email"
               value={formInput.email}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, email: e.target.value }));
@@ -104,7 +112,11 @@ const ContactMe = () => {
           </TranslucentCard>
           <TranslucentCard className="bg-contactMePrimary relative">
             <ErrorText text={error.subject} />
+            <label htmlFor="subject" className="sr-only">
+              Subject
+            </label>
             <input
+              id="subject"
               value={formInput.subject}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, subject: e.target.value }));
@@ -119,7 +131,11 @@ const ContactMe = () => {
           </TranslucentCard>
           <TranslucentCard className="bg-contactMePrimary relative">
             <ErrorText text={error.message} />
+            <label htmlFor="message" className="sr-only">
+              Message
+            </label>
             <textarea
+              id="message"
               value={formInput.message}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, message: e.target.value }));
