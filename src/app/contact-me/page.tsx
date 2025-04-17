@@ -1,10 +1,37 @@
 "use client";
 import { useThemeColor } from "@/app/context/ThemeContext";
 import TranslucentCard from "@/components/TranslucentCard";
+import validateFormInput, {
+  validateName,
+  validateEmail,
+  validateMessage,
+} from "@/utils/ValidateFormInput";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const ErrorText = ({ text }: { text: string }) => {
+  return (
+    <div className="absolute top-[10px] right-[30px] text-[14px] font-[500] text-[#FF3333]">
+      {text}
+    </div>
+  );
+};
 
 const ContactMe = () => {
+  const [formInput, setFormInput] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [error, setError] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [isErrorOutline, setIsErrorOutline] = useState(false);
   const themeColor = useThemeColor();
   return (
     <div className="bg-[url('/images/contact-me-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
@@ -37,32 +64,86 @@ const ContactMe = () => {
 
         <TranslucentCard className="flex flex-col text-[25px] gap-[30px] w-[50%]">
           <h2 className="text-3xl font-bold self-center">Get in Touch</h2>
-          <TranslucentCard className="bg-contactMePrimary">
+          <TranslucentCard className="bg-contactMePrimary relative">
+            <ErrorText text={error.name} />
             <input
+              value={formInput.name}
+              onChange={(e) => {
+                setFormInput((prev) => ({ ...prev, name: e.target.value }));
+                let error = validateName(e.target.value);
+                if (error) {
+                  setError((prev) => ({ ...prev, name: error }));
+                } else setError((prev) => ({ ...prev, name: "" }));
+              }}
               placeholder="Enter your full name"
-              className="placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+              className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                error.name &&
+                isErrorOutline &&
+                "outline outline-[#FF3333] hover:outline-[#FF3333]"
+              }`}
             />
           </TranslucentCard>
-          <TranslucentCard className="bg-contactMePrimary">
+          <TranslucentCard className="bg-contactMePrimary relative">
+            <ErrorText text={error.email} />
             <input
+              value={formInput.email}
+              onChange={(e) => {
+                setFormInput((prev) => ({ ...prev, email: e.target.value }));
+                let error = validateEmail(e.target.value);
+                if (error) {
+                  setError((prev) => ({ ...prev, email: error }));
+                } else setError((prev) => ({ ...prev, email: "" }));
+              }}
               placeholder="Enter your email address (example@email.com)"
-              className="placeholder:text-gray-400 bg-transparent outline-[1px]  hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+              className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                error.email &&
+                isErrorOutline &&
+                "outline outline-[#FF3333] hover:outline-[#FF3333]"
+              }`}
             />
           </TranslucentCard>
-          <TranslucentCard className="bg-contactMePrimary">
+          <TranslucentCard className="bg-contactMePrimary relative">
+            <ErrorText text={error.subject} />
             <input
-              placeholder="Enter the subject"
-              className="placeholder:text-gray-400 bg-transparent outline-[1px]  hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+              value={formInput.subject}
+              onChange={(e) => {
+                setFormInput((prev) => ({ ...prev, subject: e.target.value }));
+              }}
+              placeholder="Enter the subject (Optional)"
+              className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                error.subject &&
+                isErrorOutline &&
+                "outline outline-[#FF3333] hover:outline-[#FF3333]"
+              }`}
             />
           </TranslucentCard>
-          <TranslucentCard className="bg-contactMePrimary">
+          <TranslucentCard className="bg-contactMePrimary relative">
+            <ErrorText text={error.message} />
             <textarea
+              value={formInput.message}
+              onChange={(e) => {
+                setFormInput((prev) => ({ ...prev, message: e.target.value }));
+                let error = validateMessage(e.target.value);
+                if (error) {
+                  setError((prev) => ({ ...prev, message: error }));
+                } else setError((prev) => ({ ...prev, message: "" }));
+              }}
               placeholder="Type your message"
-              className="placeholder:text-gray-400 bg-transparent outline-[1px]  hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+              className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                error.message &&
+                isErrorOutline &&
+                "outline outline-[#FF3333] hover:outline-[#FF3333]"
+              }`}
             />
           </TranslucentCard>
           <div className="flex flex-col gap-2 items-center">
-            <button className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg hover:bg-opacity-80 hover:shadow-xl transition-all duration-300">
+            <button
+              onClick={() => {
+                setIsErrorOutline(true);
+                setError(validateFormInput(formInput));
+              }}
+              className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg hover:bg-opacity-80 hover:shadow-xl transition-all duration-300"
+            >
               Send
             </button>
             <p className="text-white/70 text-sm italic text-center">
