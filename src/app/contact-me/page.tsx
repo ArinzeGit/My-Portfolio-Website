@@ -147,7 +147,7 @@ const ContactMe = () => {
               Send
             </button>
             <p className="text-white/70 text-sm italic text-center">
-              I usually reply within 12 hours!
+              I usually reply within 24 hours!
             </p>
           </div>
         </TranslucentCard>
