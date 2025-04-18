@@ -42,7 +42,7 @@ const ContactMe = () => {
         }}
       >
         <TranslucentCard className="max-w-md bg-contactMePrimary text-center sticky top-[0]">
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
+          <div className="relative w-24 h-24 sm:w-30 sm:h-30 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
             <Image
               src="/images/cartoon-arinze-in-suit.jpg"
               alt="Professional image"
