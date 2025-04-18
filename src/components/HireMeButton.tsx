@@ -4,7 +4,7 @@ const HireMeButton = ({ className }: { className: string }) => {
   return (
     <Link
       href={"/contact-me"}
-      className={`mt-[50px] block text-center text-white text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg hover:bg-opacity-80 hover:shadow-xl transition-all duration-300 ${className}`}
+      className={`mt-[50px] block text-center text-white text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:-translate-y-1 hover:shadow-xl ${className}`}
     >
       Hire Me
     </Link>

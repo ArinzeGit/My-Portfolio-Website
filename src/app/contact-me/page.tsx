@@ -154,7 +154,7 @@ const ContactMe = () => {
                 setIsErrorOutline(true);
                 setError(validateFormInput(formInput));
               }}
-              className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg hover:bg-opacity-80 hover:shadow-xl transition-all duration-300"
+              className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:-translate-y-1 hover:shadow-xl hover:bg-opacity-80"
             >
               Send
             </button>
