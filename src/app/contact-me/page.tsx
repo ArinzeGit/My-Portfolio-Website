@@ -41,8 +41,8 @@ const ContactMe = () => {
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        <TranslucentCard className="max-w-md bg-contactMePrimary text-center sticky top-[0]">
-          <div className="relative w-24 h-24 sm:w-30 sm:h-30 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
+        <TranslucentCard className="max-w-md bg-contactMePrimary text-center sticky top-[50%] translate-y-[-50%]">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
             <Image
               src="/images/cartoon-arinze-in-suit.jpg"
               alt="Professional image"
@@ -55,11 +55,13 @@ const ContactMe = () => {
 
           <Link
             href="mailto:arinzeowoh@gmail.com"
-            className="inline-block mt-[10px] text-[18px] bg-[rgba(0,0,0,.3)] hover:bg-contactMePrimary rounded-full px-[10px] py-[5px] transition-all"
+            className="inline-block mt-[10px] text-[20px] bg-[rgba(0,0,0,.3)] hover:bg-contactMePrimary rounded-full px-[10px] py-[5px] transition-all"
           >
             arinzeowoh@gmail.com
           </Link>
-          <p className="mt-[10px]">Send email or use contact form</p>
+          <p className="mt-[10px] text-[18px]">
+            Send email or use contact form
+          </p>
         </TranslucentCard>
 
         <TranslucentCard className="flex flex-col text-[25px] gap-[30px] w-[50%]">
