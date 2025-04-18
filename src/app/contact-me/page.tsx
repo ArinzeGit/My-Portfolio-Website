@@ -122,7 +122,7 @@ const ContactMe = () => {
                 setFormInput((prev) => ({ ...prev, subject: e.target.value }));
               }}
               placeholder="Enter the subject (Optional)"
-              className="laceholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+              className="placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
             />
           </TranslucentCard>
           <TranslucentCard className="bg-contactMePrimary relative">
