@@ -152,9 +152,54 @@ const ContactMe = () => {
           </TranslucentCard>
           <div className="flex flex-col gap-2 items-center">
             <button
-              onClick={() => {
+              onClick={async () => {
                 setIsErrorOutline(true);
-                setError(validateFormInput(formInput));
+                const validationErrors = validateFormInput(formInput);
+                setError(validationErrors);
+
+                const hasError = Object.values(validationErrors).some(
+                  (e) => e !== ""
+                );
+                if (hasError) return;
+
+                if (!navigator.onLine) {
+                  alert(
+                    "You're offline. Please connect to the internet and try again."
+                  );
+                  return;
+                }
+
+                try {
+                  const res = await fetch("/api/contact-me", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formInput),
+                  });
+
+                  if (!res.ok) throw new Error("Network response was not ok");
+
+                  const data = await res.json();
+
+                  if (data.success) {
+                    alert("Message sent successfully!");
+                    setFormInput({
+                      name: "",
+                      email: "",
+                      subject: "",
+                      message: "",
+                    });
+                    setIsErrorOutline(false);
+                  } else {
+                    alert("Failed to send. Try again later.");
+                  }
+                } catch (err) {
+                  console.error("Error sending message:", err);
+                  alert(
+                    "Something went wrong. Please check your internet and try again."
+                  );
+                }
               }}
               className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:-translate-y-1 hover:shadow-xl hover:bg-opacity-80"
             >
