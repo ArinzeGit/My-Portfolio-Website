@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const ErrorText = ({ text }: { text: string }) => {
   return (
-    <div className="absolute top-[10px] right-[30px] text-[14px] font-[500] text-[#FF3333]">
+    <div className="absolute top-[7px] right-[38px] text-[14px] font-[500] text-[#FF3333]">
       {text}
     </div>
   );
