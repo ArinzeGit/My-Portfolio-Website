@@ -30,9 +30,8 @@ export const validateMessage = (message:string) => {
     return "";
 }
     
-const validateFormInput = ({ name, email, subject, message }: Props) => {
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,6}$/;
-    let error:Props = {
+const validateFormInput = ({ name, email, message }: Props) => {
+    const error:Props = {
         name: "",
         email: "",
         subject: "",

@@ -76,7 +76,7 @@ const ContactMe = () => {
               value={formInput.name}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, name: e.target.value }));
-                let error = validateName(e.target.value);
+                const error = validateName(e.target.value);
                 if (error) {
                   setError((prev) => ({ ...prev, name: error }));
                 } else setError((prev) => ({ ...prev, name: "" }));
@@ -99,7 +99,7 @@ const ContactMe = () => {
               value={formInput.email}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, email: e.target.value }));
-                let error = validateEmail(e.target.value);
+                const error = validateEmail(e.target.value);
                 if (error) {
                   setError((prev) => ({ ...prev, email: error }));
                 } else setError((prev) => ({ ...prev, email: "" }));
@@ -137,7 +137,7 @@ const ContactMe = () => {
               value={formInput.message}
               onChange={(e) => {
                 setFormInput((prev) => ({ ...prev, message: e.target.value }));
-                let error = validateMessage(e.target.value);
+                const error = validateMessage(e.target.value);
                 if (error) {
                   setError((prev) => ({ ...prev, message: error }));
                 } else setError((prev) => ({ ...prev, message: "" }));
