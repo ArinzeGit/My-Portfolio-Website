@@ -102,7 +102,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h3 className="text-lg font-semibold">{project.title}</h3>
       </div>
       <div className="w-full flex-1 [perspective:1000px]">
-        <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[inset_0_0_20px] shadow-projectsPrimary rounded-lg">
+        <div className="relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-hover:[transition-delay:100ms] shadow-[inset_0_0_20px] shadow-projectsPrimary rounded-lg">
           {/* Front Side */}
           <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center px-2">
             <video
