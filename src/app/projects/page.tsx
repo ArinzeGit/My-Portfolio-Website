@@ -102,9 +102,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h3 className="text-lg font-semibold">{project.title}</h3>
       </div>
       <div className="w-full flex-1 [perspective:1000px]">
-        <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div className="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[inset_0_0_20px] shadow-projectsPrimary rounded-lg">
           {/* Front Side */}
-          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center">
+          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center px-2">
             <video
               autoPlay
               loop
@@ -119,7 +119,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </video>
           </div>
           {/* Back Side */}
-          <div className="absolute w-full h-full flex flex-col items-center p-5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] shadow-[inset_0_0_20px_rgb(188,182,166)] rounded-lg">
+          <div className="absolute w-full h-full flex flex-col justify-center items-center p-5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
             <p className="text-sm">{project.description}</p>
             <div className="mt-2 flex flex-wrap gap-2 justify-center">
               {project.techStack.map((tech, index) => (
