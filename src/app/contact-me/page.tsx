@@ -194,7 +194,7 @@ const ContactMe = () => {
                   } else {
                     alert("Failed to send. Try again later.");
                   }
-                } catch (err) {
+                } catch {
                   alert(
                     "Something went wrong. Please check your internet and try again."
                   );
