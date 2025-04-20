@@ -106,6 +106,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           {/* Front Side */}
           <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center px-2">
             <video
+              aria-label={`Video demo of ${project.title}`}
               autoPlay
               loop
               muted
@@ -125,7 +126,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               {project.techStack.map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-gray-700 px-2 py-1 rounded text-xs"
+                  className="bg-gray-700 px-2 py-1 rounded text-xs hover:bg-gray-600 transition cursor-default"
                 >
                   {tech}
                 </span>
@@ -136,6 +137,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 <Link
                   href={project.github}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-400 hover:underline"
                 >
                   GitHub
@@ -144,6 +146,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               <Link
                 href={project.live}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-green-400 hover:underline"
               >
                 Live Demo
