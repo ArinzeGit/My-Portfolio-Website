@@ -9,9 +9,9 @@ import TranslucentCard from "@/components/TranslucentCard";
 const About = () => {
   const themeColor = useThemeColor();
   return (
-    <div className="  bg-[url('/images/about-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
+    <div className="  bg-[url('/images/about-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[85px] flex flex-col sm:flex-row justify-between gap-[40px] items-start text-secondary text-xl leading-loose"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] flex flex-col sm:flex-row justify-between gap-[40px] items-start text-secondary text-xl leading-loose"
         style={
           {
             "--theme-color": themeColor, // Inject theme color as a CSS variable which will be used in globals.css to set thumb color and track color for safari

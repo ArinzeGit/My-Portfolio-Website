@@ -9,6 +9,8 @@
   --contact-me-primary: rgb(155, 89, 182);
   --secondary: rgb(240, 240, 240);
   --neutral:rgb(188, 182, 166);
+  --page-padding-top: 65px;
+  --nav-bar-height: 85px;
 }
 
 /* Custom scrollbar for Safari */

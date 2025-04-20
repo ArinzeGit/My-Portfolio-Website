@@ -97,7 +97,7 @@ const projects: Project[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="w-[300px] h-[260px] flex flex-col">
+    <div className="w-[300px] h-[280px] flex flex-col">
       <div className="w-full p-4 text-center">
         <h3 className="text-lg font-semibold">{project.title}</h3>
       </div>
@@ -119,7 +119,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </video>
           </div>
           {/* Back Side */}
-          <div className="absolute w-full h-full flex flex-col justify-center items-center px-4 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
+          <div className="absolute w-full h-full flex flex-col items-center p-5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] shadow-[inset_0_0_20px_rgb(188,182,166)] rounded-lg">
             <p className="text-sm">{project.description}</p>
             <div className="mt-2 flex flex-wrap gap-2 justify-center">
               {project.techStack.map((tech, index) => (
@@ -159,9 +159,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const Projects = () => {
   const themeColor = useThemeColor();
   return (
-    <div className="bg-[url('/images/projects-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
+    <div className="bg-[url('/images/projects-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin p-[85px] flex flex-col items-center"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] px-[85px] flex flex-col items-center"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}

@@ -34,9 +34,9 @@ const ContactMe = () => {
   const [isErrorOutline, setIsErrorOutline] = useState(false);
   const themeColor = useThemeColor();
   return (
-    <div className="bg-[url('/images/contact-me-page-background.webp')] bg-cover bg-center min-h-full pt-[85px]">
+    <div className="bg-[url('/images/contact-me-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[85px] flex flex-col sm:flex-row justify-center items-start text-secondary"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] flex flex-col sm:flex-row justify-center items-start text-secondary"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
