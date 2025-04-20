@@ -47,7 +47,7 @@ const ContactMe = () => {
               src="/images/cartoon-arinze-in-suit.jpg"
               alt="Professional image"
               fill
-              sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 400px"
+              sizes="(max-width: 640px) 100vw, 128px"
               className="object-cover object-top transition-transform duration-500 ease-out hover:scale-110"
               priority
             />
@@ -195,7 +195,6 @@ const ContactMe = () => {
                     alert("Failed to send. Try again later.");
                   }
                 } catch (err) {
-                  console.error("Error sending message:", err);
                   alert(
                     "Something went wrong. Please check your internet and try again."
                   );
