@@ -36,12 +36,12 @@ const ContactMe = () => {
   return (
     <div className="bg-[url('/images/contact-me-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] flex flex-col sm:flex-row justify-center items-start text-secondary"
+        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] flex flex-col sm:flex-row justify-center gap-[100px]  text-secondary"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        <TranslucentCard className="max-w-md bg-contactMePrimary text-center sticky top-[50%] translate-y-[-50%]">
+        <TranslucentCard className="max-w-md bg-contactMePrimary text-center h-fit sticky top-[calc(50%-153.5px)]">
           <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
             <Image
               src="/images/cartoon-arinze-in-suit.jpg"
@@ -64,7 +64,7 @@ const ContactMe = () => {
           </p>
         </TranslucentCard>
 
-        <TranslucentCard className="flex flex-col text-[25px] gap-[30px] w-[50%]">
+        <TranslucentCard className="flex flex-col text-[25px] gap-[30px] w-[50%] h-fit">
           <h2 className="text-3xl font-bold self-center">Get in Touch</h2>
           <TranslucentCard className="bg-contactMePrimary relative">
             <ErrorText text={error.name} />
