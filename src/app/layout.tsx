@@ -6,6 +6,7 @@ import ClientLayout from "@/app/ClientLayout"; // Import the ClientLayout
 export const metadata: Metadata = {
   title: "Dennings Owoh",
   description: "Portfolio to showcase my projects",
+  viewport: "width=device-width, initial-scale=1.0",
   icons: {
     icon: [
       {
