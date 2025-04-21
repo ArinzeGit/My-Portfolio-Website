@@ -3,6 +3,7 @@ import { useThemeColor } from "@/app/context/ThemeContext";
 import HireMeButton from "@/components/HireMeButton";
 import TranslucentCard from "@/components/TranslucentCard";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 interface Project {
   title: string;
@@ -96,6 +97,16 @@ const projects: Project[] = [
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && video.readyState >= 3) {
+      setIsLoaded(true);
+    }
+  }, []);
+
   return (
     <div className="w-[300px] h-[280px] flex flex-col">
       <div className="w-full p-4 text-center">
@@ -104,16 +115,27 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="w-full flex-1 [perspective:1000px]">
         <div className="relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-hover:[transition-delay:100ms] shadow-[inset_0_0_20px] shadow-projectsPrimary rounded-lg">
           {/* Front Side */}
-          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-b-lg flex items-center px-2">
+          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-lg flex items-center px-2">
+            {!isLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-30">
+                <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin" />
+              </div>
+            )}
             <video
+              ref={videoRef}
               aria-label={`Video demo of ${project.title}`}
               autoPlay
               loop
               muted
               playsInline
               width="300"
-              height="200"
-              className="rounded-md shadow-lg"
+              onLoadedData={() => {
+                setIsLoaded(true);
+                console.log("Video loaded:", project.title);
+              }}
+              className={`rounded-md shadow-lg transition-opacity duration-300 ${
+                isLoaded ? "opacity-100" : "opacity-0"
+              }`}
             >
               <source src={project.videoDemo} type="video/webm" />
               Your browser does not support the video tag.
