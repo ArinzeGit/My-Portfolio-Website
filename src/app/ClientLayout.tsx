@@ -22,7 +22,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <ThemeProvider>
-        <body className="antialiased bg-[url('/images/portfolio-background.webp')] bg-cover bg-center min-h-[100vh] p-[25px] flex flex-col justify-center items-center gap-y-[40px] text-secondary">
+        <body className="antialiased bg-[url('/images/portfolio-background.webp')] bg-cover bg-center min-h-[100vh] p-[10px] flex flex-col justify-center items-center text-secondary">
           {/* Flashing Horizontal Line */}
           <div
             className={`absolute left-0 w-full h-[2px] top-[65vh] transition-shadow duration-500 bg-[rgb(255,255,200)] ${
@@ -32,7 +32,7 @@ const ClientLayout = ({ children }: { children: React.ReactNode }) => {
             }`}
           />
           <div
-            className="relative transition-shadow duration-500 shadow-[0_0_30px_rgb(188,182,166)]"
+            className="relative transition-shadow duration-500 shadow-[0_0_30px_rgb(188,182,166)] mb-[15px]"
             style={{
               boxShadow: isFlashing
                 ? "0 0 30px 3px rgb(255,255,200)"
