@@ -118,7 +118,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-lg flex items-center px-2">
             {!isLoaded && (
               <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-30">
-                <div className="w-6 h-6 border-4 border-white border-t-transparent rounded-full animate-spin" />
+                <div className="w-12 h-12 border-[6px] border-white border-y-transparent rounded-full animate-spin" />
               </div>
             )}
             <video
