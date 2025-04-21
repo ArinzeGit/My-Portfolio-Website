@@ -19,14 +19,14 @@ const Home = () => {
       >
         <div className="flex flex-col sm:flex-row justify-between gap-[40px] items-center min-h-full">
           <TranslucentCard position="left" className="max-w-md bg-homePrimary">
-            <h1 className="text-secondary text-4xl sm:text-5xl font-bold mb-4 font-montserrat">
+            <span className="text-secondary text-[36px] sm:text-[42px] leading-[1.1] font-bold mb-4 font-montserrat">
               Hi, I&apos;m
-              <span className="text-gray-400 italic"> Dennings Owoh </span>, a
+              <span className="text-gray-400 italic"> Dennings Owoh</span>, a
               <span className="text-homePrimary italic"> Frontend </span>
               Developer and
               <span className="text-homePrimary italic"> Game </span>
               Developer
-            </h1>
+            </span>
             {/* Icons for GitHub, Email */}
             <div className="mt-6 flex items-center gap-10">
               <Link
@@ -50,7 +50,7 @@ const Home = () => {
             className="max-w-[34%] bg-homePrimary"
           >
             <p className="text-secondary text-lg sm:text-xl leading-relaxed font-montserrat">
-              <span className="block text-3xl sm:text-4xl font-bold italic">
+              <span className="block text-[30px] sm:text-[30px] leading-[1] font-bold italic">
                 Where imagination meets{" "}
                 <span className="text-homePrimary">code,</span>
               </span>

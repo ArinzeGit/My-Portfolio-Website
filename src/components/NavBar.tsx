@@ -11,7 +11,7 @@ const NavBar = () => {
         <div style={{ color: themeColor }}>
           <Logo />
         </div>
-        <h1 className="text-[30px] text-secondary font-roboto">
+        <h1 className="text-[25px] text-secondary font-roboto">
           Dennings Owoh
         </h1>
       </div>

@@ -26,8 +26,8 @@ const NavLink = ({ label, href }: NavLinkProps) => {
           borderColor: isActive
             ? themeColor
             : hovered
-            ? themeColor
-            : "transparent",
+              ? themeColor
+              : "transparent",
         }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
