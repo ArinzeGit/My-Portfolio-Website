@@ -19,6 +19,10 @@ export default {
         roboto: ['Roboto', 'Montserrat', 'sans-serif'],
         montserrat: ['Montserrat', 'Roboto', 'sans-serif'],
       },
+      screens: {
+        tablet: '730px',
+        desktop: '1000px',
+      },
     },
   },
   plugins: [require('tailwind-scrollbar')],

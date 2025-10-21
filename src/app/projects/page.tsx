@@ -133,7 +133,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               width="300"
               onLoadedData={() => {
                 setIsLoaded(true);
-                console.log("Video loaded:", project.title);
+                // console.log("Video loaded:", project.title);
               }}
               className={`rounded-md shadow-lg transition-opacity duration-300 ${
                 isLoaded ? "opacity-100" : "opacity-0"
@@ -188,19 +188,21 @@ const Projects = () => {
   return (
     <div className="bg-[url('/images/projects-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="w-[max(80vw,870px)] sm:h-[max(calc(35vw-85px),500px)] overflow-auto scrollbar-thin py-[--page-padding-top] px-[85px] flex flex-col items-center"
+        className="desktop:w-[--main-window-width] h-[100%] desktop:h-[--main-display-height] overflow-auto scrollbar-thin"
         style={{
           scrollbarColor: `${themeColor} #1F1F1F`, // Set thumb color and track color
         }}
       >
-        <div className="flex flex-wrap gap-8 justify-center">
-          {projects.map((project, index) => (
-            <TranslucentCard className="bg-projectsPrimary group" key={index}>
-              <ProjectCard project={project} />
-            </TranslucentCard>
-          ))}
+        <div className="py-[32px] desktop:py-[--page-padding-top] px-[16px] flex flex-col items-center">
+          <div className="flex flex-wrap gap-8 justify-center">
+            {projects.map((project, index) => (
+              <TranslucentCard className="bg-projectsPrimary group" key={index}>
+                <ProjectCard project={project} />
+              </TranslucentCard>
+            ))}
+          </div>
+          <HireMeButton className="bg-[var(--projects-primary)]" />
         </div>
-        <HireMeButton className="bg-[var(--projects-primary)]" />
       </div>
     </div>
   );

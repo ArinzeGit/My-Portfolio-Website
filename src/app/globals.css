@@ -11,6 +11,8 @@
   --neutral:rgb(188, 182, 166);
   --page-padding-top: 65px;
   --nav-bar-height: 85px;
+  --main-window-width: 90vw;
+  --main-display-height: 70vh;
 }
 
 /* Custom scrollbar for Safari */

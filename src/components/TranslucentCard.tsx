@@ -17,10 +17,10 @@ const TranslucentCard: React.FC<TranslucentCardProps> = ({
     <div
       className={`bg-opacity-20 backdrop-blur-3xl p-[30px] ${
         position === "left"
-          ? " rounded-bl-[12px] rounded-br-[12px] sm:rounded-tr-[12px] sm:rounded-br-[12px] sm:rounded-none"
+          ? " rounded-[12px] desktop:rounded-tr-[12px] desktop:rounded-br-[12px] desktop:rounded-none"
           : position === "right"
-          ? " rounded-tl-[12px] rounded-tr-[12px] sm:rounded-tl-[12px] sm:rounded-bl-[12px] sm:rounded-none"
-          : "rounded-[12px]"
+            ? " rounded-[12px] desktop:rounded-tl-[12px] desktop:rounded-bl-[12px] desktop:rounded-none"
+            : "rounded-[12px]"
       } ${className}`}
     >
       {children}
