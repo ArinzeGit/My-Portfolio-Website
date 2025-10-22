@@ -20,7 +20,7 @@ export default {
         montserrat: ['Montserrat', 'Roboto', 'sans-serif'],
       },
       screens: {
-        tablet: '730px',
+        tablet: '750px',
         desktop: '1000px',
       },
     },

@@ -7,16 +7,17 @@ import { useState } from "react";
 interface NavLinkProps {
   label: string;
   href: string;
+  onClick: () => void;
 }
 
-const NavLink = ({ label, href }: NavLinkProps) => {
+const NavLink = ({ label, href, onClick }: NavLinkProps) => {
   const pathname = usePathname();
   const isActive = pathname.startsWith(href);
   const themeColor = useThemeColor();
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={href}>
+    <Link onClick={onClick} href={href}>
       <div
         className={`text-[16px] font-roboto transition-colors duration-300 ease-in-out border-[2px] px-3 py-1 rounded-full ${
           isActive ? "font-[900]" : "text-secondary font-[500]"
