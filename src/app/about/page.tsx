@@ -22,7 +22,7 @@ const About = () => {
         <div className="flex flex-col desktop:flex-row justify-around desktop:justify-between gap-[40px] items-center desktop:items-start desktop:py-[--page-padding-top] py-[32px] px-[16px] desktop:px-0">
           <TranslucentCard
             position="left"
-            className="w-[90%] desktop:w-[580px] bg-aboutPrimary"
+            className="w-full tablet:w-[90%] desktop:w-[580px] bg-aboutPrimary"
           >
             <div className="relative w-48 h-48  mx-auto overflow-hidden rounded-full border-[4px] border-aboutPrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
               <Image
@@ -139,7 +139,10 @@ const About = () => {
                 </li>
               </ul>
             </TranslucentCard>
-            <TranslucentCard position="right" className=" bg-aboutPrimary">
+            <TranslucentCard
+              position="right"
+              className="w-full tablet:w-[90%] bg-aboutPrimary"
+            >
               <div className="flex items-center justify-center desktop:justify-start gap-3 mt-8 mb-4">
                 <FaMedal className="text-yellow-400" />
                 <h2 className="text-aboutPrimary text-3xl font-bold">

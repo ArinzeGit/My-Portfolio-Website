@@ -68,7 +68,7 @@ const ContactMe = () => {
           </TranslucentCard>
           <TranslucentCard
             position="right"
-            className="flex flex-col text-[25px] gap-[30px] w-[90%] desktop:w-[min(580px,45%)] h-fit"
+            className="flex flex-col text-[25px] gap-[30px] w-full tablet:w-[90%] desktop:w-[min(580px,45%)] h-fit"
           >
             <h2 className="text-3xl font-bold self-center">Get in Touch</h2>
             <TranslucentCard className="bg-contactMePrimary relative">

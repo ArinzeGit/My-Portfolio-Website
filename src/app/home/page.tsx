@@ -21,7 +21,7 @@ const Home = () => {
         <div className="min-h-full flex flex-col desktop:flex-row justify-around desktop:justify-between gap-[40px] items-center py-[32px] desktop:py-[16px] px-[16px] desktop:px-0">
           <TranslucentCard
             position="left"
-            className="w-[70%] desktop:w-[min(580px,45%)] bg-homePrimary"
+            className="w-full tablet:w-[70%] desktop:w-[min(580px,45%)] bg-homePrimary"
           >
             <span className="text-secondary text-[36px] sm:text-[42px] leading-[1.1] font-bold mb-4 font-montserrat">
               Hi, I&apos;m
@@ -58,7 +58,7 @@ const Home = () => {
           </TranslucentCard>
           <TranslucentCard
             position="right"
-            className="w-[70%] desktop:w-[min(580px,45%)] bg-homePrimary"
+            className="w-full tablet:w-[70%] desktop:w-[min(580px,45%)] bg-homePrimary"
           >
             <p className="text-secondary text-lg sm:text-xl leading-relaxed font-montserrat">
               <span className="block text-[30px] sm:text-[30px] leading-[1] font-bold italic">
