@@ -48,7 +48,16 @@ const projects: Project[] = [
     live: "https://student-paddy-admin-dashboard.vercel.app/",
   },
   {
-    title: "Bouncing Battle Game",
+    title: "Hold The Line (Game)",
+    videoDemo: "/videos/hold-the-line-video.webm",
+    description:
+      "A fast-paced 2D shooter where you battle waves of emotions like Fear and Anger in a symbolic fight for control. Built from scratch with Pixi.js, featuring hand-designed sprites, glowing effects, and smooth bullet physics.",
+    techStack: ["Pixi.js", "JavaScript", "HTML5", "CSS"],
+    github: "https://github.com/ArinzeGit/hold-the-line",
+    live: "https://hold-the-line-swart.vercel.app/",
+  },
+  {
+    title: "Bouncing Battle (Game)",
     videoDemo: "/videos/bouncing-battle-game-video.webm",
     description:
       "A web-based multiplayer PC game with immersive sound effects and complex ball-deflection logic.",
