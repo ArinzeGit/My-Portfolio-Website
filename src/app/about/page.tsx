@@ -105,6 +105,13 @@ const About = () => {
                   </span>
                 </li>
                 <li className="group relative">
+                  Pixi.js
+                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
+                    Building high-performance 2D games and interactive
+                    animations on the web
+                  </span>
+                </li>
+                <li className="group relative">
                   D3.js
                   <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
                     Visualizing complex data with custom, interactive charts
