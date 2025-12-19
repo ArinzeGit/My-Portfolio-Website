@@ -51,7 +51,7 @@ const projects: Project[] = [
     title: "Hold The Line (Game)",
     videoDemo: "/videos/hold-the-line-video.webm",
     description:
-      "A fast-paced 2D shooter where you battle waves of emotions like Fear and Anger in a symbolic fight for control. Built from scratch with Pixi.js, featuring hand-designed sprites, glowing effects, and smooth bullet physics.",
+      "Promotional interactive game for Manfred's 'Soldier' music album launch.",
     techStack: ["Pixi.js", "JavaScript", "HTML5", "CSS"],
     github: "https://github.com/ArinzeGit/hold-the-line",
     live: "https://hold-the-line-swart.vercel.app/",
