@@ -44,33 +44,39 @@ const ContactMe = () => {
         <div className="flex flex-col desktop:flex-row justify-around desktop:justify-between gap-[40px] items-center desktop:items-start desktop:py-[--page-padding-top] py-[32px] px-[16px] desktop:px-0">
           <TranslucentCard
             position="left"
-            className="desktop:w-[min(580px,45%)] bg-contactMePrimary text-center h-fit desktop:sticky desktop:top-[calc(50%-153.5px)]"
+            className="desktop:w-[min(580px,45%)] bg-contactMePrimary text-center h-fit desktop:sticky desktop:top-[calc(50%-153.5px)] animate-fade-in-up"
           >
-            <div className="relative h-24 w-24 desktop:w-48 desktop:h-48 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
+            <div className="relative h-24 w-24 desktop:w-48 desktop:h-48 mx-auto overflow-hidden rounded-full border-[4px] border-contactMePrimary shadow-2xl transition-all duration-500 ease-out hover:shadow-contactMePrimary/50 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-contactMePrimary/20 to-transparent rounded-full z-10 pointer-events-none" />
               <Image
-                src="/images/cartoon-arinze-in-suit.jpg"
+                src="/images/game-dev-ari.jpeg"
                 alt="Professional image"
                 fill
                 sizes="(max-width: 640px) 100vw, 128px"
-                className="object-cover object-top transition-transform duration-500 ease-out hover:scale-110"
+                className="object-cover object-center transition-transform duration-500 ease-out hover:scale-110"
                 priority
               />
             </div>
             <Link
               href="mailto:arinzeowoh@gmail.com"
-              className="inline-block mt-[10px] text-[20px] bg-[rgba(0,0,0,.3)] hover:bg-contactMePrimary rounded-full px-[10px] py-[5px] transition-all"
+              className="inline-block mt-6 text-lg desktop:text-xl bg-gradient-to-r from-contactMePrimary/20 to-contactMePrimary/10 border border-contactMePrimary/30 hover:from-contactMePrimary/30 hover:to-contactMePrimary/20 hover:border-contactMePrimary/50 rounded-full px-6 py-3 transition-all duration-300 font-semibold hover:scale-105"
             >
               arinzeowoh@gmail.com
             </Link>
-            <p className="mt-[10px] text-[18px]">
+            <p className="mt-4 text-base desktop:text-lg text-gray-300">
               Send email or use contact form
             </p>
           </TranslucentCard>
           <TranslucentCard
             position="right"
-            className="flex flex-col text-[25px] gap-[30px] w-full tablet:w-[90%] desktop:w-[min(580px,45%)] h-fit"
+            className="flex flex-col gap-6 w-full tablet:w-[90%] desktop:w-[min(580px,45%)] h-fit animate-fade-in-up"
           >
-            <h2 className="text-3xl font-bold self-center">Get in Touch</h2>
+            <h2 className="text-4xl font-bold self-center font-montserrat text-secondary mb-2">
+              Get in Touch
+            </h2>
+            <p className="text-center text-gray-400 mb-4">
+              Have a project in mind? Let&apos;s work together!
+            </p>
             <TranslucentCard className="bg-contactMePrimary relative">
               <ErrorText text={error.name} />
               <label htmlFor="name" className="sr-only">
@@ -87,10 +93,10 @@ const ContactMe = () => {
                   } else setError((prev) => ({ ...prev, name: "" }));
                 }}
                 placeholder="Enter your full name"
-                className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                className={`placeholder:text-gray-500 bg-transparent outline-none border-2 border-contactMePrimary/30 hover:border-contactMePrimary/50 focus:border-contactMePrimary focus:ring-2 focus:ring-contactMePrimary/20 px-5 py-3 w-full rounded-lg text-secondary transition-all duration-300 ${
                   error.name &&
                   isErrorOutline &&
-                  "outline outline-[#FF3333] hover:outline-[#FF3333]"
+                  "border-[#FF3333] hover:border-[#FF3333] focus:border-[#FF3333] focus:ring-[#FF3333]/20"
                 }`}
               />
             </TranslucentCard>
@@ -101,6 +107,7 @@ const ContactMe = () => {
               </label>
               <input
                 id="email"
+                type="email"
                 value={formInput.email}
                 onChange={(e) => {
                   setFormInput((prev) => ({ ...prev, email: e.target.value }));
@@ -110,10 +117,10 @@ const ContactMe = () => {
                   } else setError((prev) => ({ ...prev, email: "" }));
                 }}
                 placeholder="Enter your email address (example@email.com)"
-                className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                className={`placeholder:text-gray-500 bg-transparent outline-none border-2 border-contactMePrimary/30 hover:border-contactMePrimary/50 focus:border-contactMePrimary focus:ring-2 focus:ring-contactMePrimary/20 px-5 py-3 w-full rounded-lg text-secondary transition-all duration-300 ${
                   error.email &&
                   isErrorOutline &&
-                  "outline outline-[#FF3333] hover:outline-[#FF3333]"
+                  "border-[#FF3333] hover:border-[#FF3333] focus:border-[#FF3333] focus:ring-[#FF3333]/20"
                 }`}
               />
             </TranslucentCard>
@@ -132,7 +139,7 @@ const ContactMe = () => {
                   }));
                 }}
                 placeholder="Enter the subject (Optional)"
-                className="placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg"
+                className="placeholder:text-gray-500 bg-transparent outline-none border-2 border-contactMePrimary/30 hover:border-contactMePrimary/50 focus:border-contactMePrimary focus:ring-2 focus:ring-contactMePrimary/20 px-5 py-3 w-full rounded-lg text-secondary transition-all duration-300"
               />
             </TranslucentCard>
             <TranslucentCard className="bg-contactMePrimary relative">
@@ -142,6 +149,7 @@ const ContactMe = () => {
               </label>
               <textarea
                 id="message"
+                rows={5}
                 value={formInput.message}
                 onChange={(e) => {
                   setFormInput((prev) => ({
@@ -154,14 +162,14 @@ const ContactMe = () => {
                   } else setError((prev) => ({ ...prev, message: "" }));
                 }}
                 placeholder="Type your message"
-                className={`placeholder:text-gray-400 bg-transparent outline-[1px] hover:outline hover:outline-contactMePrimary focus:outline focus:outline-[2px] focus:outline-white px-[20px] py-[5px] w-full rounded-lg ${
+                className={`placeholder:text-gray-500 bg-transparent outline-none border-2 border-contactMePrimary/30 hover:border-contactMePrimary/50 focus:border-contactMePrimary focus:ring-2 focus:ring-contactMePrimary/20 px-5 py-3 w-full rounded-lg text-secondary transition-all duration-300 resize-none ${
                   error.message &&
                   isErrorOutline &&
-                  "outline outline-[#FF3333] hover:outline-[#FF3333]"
+                  "border-[#FF3333] hover:border-[#FF3333] focus:border-[#FF3333] focus:ring-[#FF3333]/20"
                 }`}
               />
             </TranslucentCard>
-            <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-col gap-3 items-center mt-4">
               <button
                 onClick={async () => {
                   setIsErrorOutline(true);
@@ -205,11 +213,24 @@ const ContactMe = () => {
                     );
                   }
                 }}
-                className="bg-contactMePrimary text-xl sm:text-2xl font-bold tracking-wide py-3 px-6 rounded-2xl shadow-lg transform transition-transform duration-300 ease-in-out hover:scale-[1.05] hover:-translate-y-1 hover:shadow-xl hover:bg-opacity-80"
+                className="bg-gradient-to-r from-contactMePrimary to-purple-600 text-xl sm:text-2xl font-bold tracking-wide py-4 px-8 rounded-xl shadow-lg shadow-contactMePrimary/30 transform transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 hover:shadow-xl hover:shadow-contactMePrimary/50 active:scale-95"
               >
-                Send
+                Send Message
               </button>
-              <p className="text-white/70 text-sm italic text-center">
+              <p className="text-gray-300 text-sm italic text-center flex items-center gap-2">
+                <svg
+                  className="w-4 h-4 text-contactMePrimary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
                 I usually reply within 24 hours!
               </p>
             </div>

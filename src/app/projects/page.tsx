@@ -119,17 +119,19 @@ const ProjectCard = ({ project }: { project: Project }) => {
   }, []);
 
   return (
-    <div className="w-[300px] h-[280px] flex flex-col">
-      <div className="w-full p-4 text-center">
-        <h3 className="text-lg font-semibold">{project.title}</h3>
+    <div className="w-[320px] h-[380px] flex flex-col">
+      <div className="w-full p-4 text-center mb-2">
+        <h3 className="text-xl font-bold text-secondary group-hover:text-projectsPrimary transition-colors duration-300">
+          {project.title}
+        </h3>
       </div>
       <div className="w-full flex-1 [perspective:1000px]">
-        <div className="relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] group-hover:[transition-delay:100ms] shadow-[inset_0_0_20px] shadow-projectsPrimary rounded-lg">
+        <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[0_8px_32px_rgba(39,174,96,0.3)] rounded-xl">
           {/* Front Side */}
-          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-lg flex items-center px-2">
+          <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-xl flex items-center justify-center px-2 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
             {!isLoaded && (
-              <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-30">
-                <div className="w-12 h-12 border-[6px] border-white border-y-transparent rounded-full animate-spin" />
+              <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40 backdrop-blur-sm">
+                <div className="w-12 h-12 border-[4px] border-projectsPrimary border-t-transparent rounded-full animate-spin" />
               </div>
             )}
             <video
@@ -142,10 +144,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
               width="300"
               onLoadedData={() => {
                 setIsLoaded(true);
-                // console.log("Video loaded:", project.title);
               }}
-              className={`rounded-md shadow-lg transition-opacity duration-300 ${
-                isLoaded ? "opacity-100" : "opacity-0"
+              className={`rounded-lg shadow-2xl transition-all duration-500 ${
+                isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
               <source src={project.videoDemo} type="video/webm" />
@@ -153,26 +154,41 @@ const ProjectCard = ({ project }: { project: Project }) => {
             </video>
           </div>
           {/* Back Side */}
-          <div className="absolute w-full h-full flex flex-col justify-center items-center p-5 text-center [transform:rotateY(180deg)] [backface-visibility:hidden]">
-            <p className="text-sm">{project.description}</p>
-            <div className="mt-2 flex flex-wrap gap-2 justify-center">
-              {project.techStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-gray-700 px-2 py-1 rounded text-xs hover:bg-gray-600 transition cursor-default"
-                >
-                  {tech}
-                </span>
-              ))}
+          <div className="absolute w-full h-full flex flex-col justify-between items-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-gradient-to-br from-gray-900/95 to-gray-800/95 rounded-xl">
+            <div className="flex-1 flex flex-col justify-center">
+              <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                {project.description}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2 justify-center">
+                {project.techStack.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-gradient-to-r from-projectsPrimary/20 to-projectsPrimary/10 border border-projectsPrimary/30 px-3 py-1.5 rounded-full text-xs font-medium text-projectsPrimary hover:from-projectsPrimary/30 hover:to-projectsPrimary/20 hover:border-projectsPrimary/50 transition-all duration-300 cursor-default backdrop-blur-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="mt-4 flex gap-4">
+            <div className="mt-6 flex gap-4 justify-center">
               {project.github && (
                 <Link
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-400 hover:underline"
+                  className="flex items-center gap-2 bg-gray-800/50 hover:bg-gray-700/70 border border-gray-600/50 hover:border-blue-400/50 px-4 py-2 rounded-lg text-blue-400 font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-400/20"
                 >
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
                   GitHub
                 </Link>
               )}
@@ -180,8 +196,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-400 hover:underline"
+                className="flex items-center gap-2 bg-projectsPrimary/20 hover:bg-projectsPrimary/30 border border-projectsPrimary/50 hover:border-projectsPrimary px-4 py-2 rounded-lg text-green-400 font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-400/20"
               >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
                 Live Demo
               </Link>
             </div>
@@ -203,14 +232,33 @@ const Projects = () => {
         }}
       >
         <div className="py-[32px] desktop:py-[--page-padding-top] px-[16px] flex flex-col items-center">
-          <div className="flex flex-wrap gap-8 justify-center">
+          <TranslucentCard className="bg-projectsPrimary mb-12 animate-fade-in-up">
+            <div className="text-center">
+              <h1 className="text-5xl font-bold text-secondary mb-4 font-montserrat">
+                My <span className="text-projectsPrimary">Projects</span>
+              </h1>
+              <p className="text-gray-200 text-lg max-w-2xl mx-auto font-medium">
+                A collection of my work showcasing frontend development, game development, and innovative web solutions
+              </p>
+            </div>
+          </TranslucentCard>
+          <div className="flex flex-wrap gap-10 justify-center">
             {projects.map((project, index) => (
-              <TranslucentCard className="bg-projectsPrimary group" key={index}>
+              <TranslucentCard
+                key={index}
+                className="bg-projectsPrimary group animate-fade-in-up"
+                style={{
+                  animationDelay: `${index * 100}ms`,
+                  animationFillMode: "both",
+                }}
+              >
                 <ProjectCard project={project} />
               </TranslucentCard>
             ))}
           </div>
-          <HireMeButton className="bg-[var(--projects-primary)]" />
+          <div className="mt-16 animate-fade-in">
+            <HireMeButton className="bg-[var(--projects-primary)]" />
+          </div>
         </div>
       </div>
     </div>

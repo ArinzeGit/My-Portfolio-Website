@@ -13,12 +13,12 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center p-[20px] bg-[#121212] tablet:bg-transparent backdrop-blur-none tablet:backdrop-blur-3xl transition-colors duration-300 ease-in-out">
+    <nav className="flex justify-between items-center p-[20px] bg-[#121212] tablet:bg-transparent backdrop-blur-none tablet:backdrop-blur-3xl transition-colors duration-300 ease-in-out border-b border-white/5">
       <div className="flex gap-[20px] items-center">
-        <div style={{ color: themeColor }}>
+        <div style={{ color: themeColor }} className="transition-transform duration-300 hover:scale-110">
           <Logo />
         </div>
-        <h1 className="text-[25px] text-secondary font-roboto">
+        <h1 className="text-[25px] text-secondary font-roboto font-bold">
           Dennings Owoh
         </h1>
       </div>

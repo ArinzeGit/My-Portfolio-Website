@@ -11,7 +11,7 @@ const About = () => {
   return (
     <div className="  bg-[url('/images/about-page-background.webp')] bg-cover bg-center min-h-full pt-[--nav-bar-height]">
       <div
-        className="desktop:w-[--main-window-width] h-[100%] desktop:h-[--main-display-height] overflow-auto scrollbar-thin text-secondary text-xl leading-loose"
+        className="desktop:w-[--main-window-width] h-[100%] desktop:h-[--main-display-height] overflow-x-hidden overflow-y-auto scrollbar-thin text-secondary text-xl leading-loose"
         style={
           {
             "--theme-color": themeColor, // Inject theme color as a CSS variable which will be used in globals.css to set thumb color and track color for safari
@@ -22,19 +22,20 @@ const About = () => {
         <div className="flex flex-col desktop:flex-row justify-around desktop:justify-between gap-[40px] items-center desktop:items-start desktop:py-[--page-padding-top] py-[32px] px-[16px] desktop:px-0">
           <TranslucentCard
             position="left"
-            className="w-full tablet:w-[90%] desktop:w-[580px] bg-aboutPrimary"
+            className="w-full tablet:w-[90%] desktop:w-[580px] bg-aboutPrimary animate-fade-in-up"
           >
-            <div className="relative w-48 h-48  mx-auto overflow-hidden rounded-full border-[4px] border-aboutPrimary shadow-lg transition-all duration-500 ease-out hover:shadow-2xl">
+            <div className="relative w-48 h-48 mx-auto overflow-hidden rounded-full border-[4px] border-aboutPrimary shadow-2xl transition-all duration-500 ease-out hover:shadow-aboutPrimary/50 hover:scale-105">
+              <div className="absolute inset-0 bg-gradient-to-br from-aboutPrimary/20 to-transparent rounded-full z-10 pointer-events-none" />
               <Image
-                src="/images/cartoon-arinze-in-suit.jpg"
+                src="/images/game-dev-ari.jpeg"
                 alt="Professional image"
                 fill
                 sizes="(max-width: 640px) 100vw, 256px"
-                className="object-cover object-top transition-transform duration-500 ease-out hover:scale-110"
+                className="object-cover object-center transition-transform duration-500 ease-out hover:scale-110"
                 priority
               />
             </div>
-            <p className="mt-[30px]">
+            <p className="mt-[30px] text-gray-200 leading-relaxed text-lg">
               From solving complex mathematical problems to crafting sleek,
               interactive web applications, I thrive on turning challenges into
               opportunities. Whether it&apos;s building a multiplayer game in
@@ -68,101 +69,88 @@ const About = () => {
             </Link>
           </TranslucentCard>
           <div className="flex flex-col items-center gap-[32px] desktop:w-[580px] desktop:items-stretch">
-            <TranslucentCard position="right" className="bg-aboutPrimary">
-              <h2 className="text-aboutPrimary text-3xl font-bold mb-4 text-center desktop:text-left">
+            <TranslucentCard position="right" className="bg-aboutPrimary overflow-visible animate-fade-in-up">
+              <h2 className="text-aboutPrimary text-3xl font-bold mb-6 text-center desktop:text-left font-montserrat">
                 Technologies I Use
               </h2>
-              <ul className="list-disc list-inside space-y-2 font-semibold">
-                <li className="group relative">
-                  JavaScript (ES6+)
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Building dynamic and interactive web features
-                  </span>
-                </li>
-                <li className="group relative">
-                  React.js
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Developing modular, reusable UI components
-                  </span>
-                </li>
-                <li className="group relative">
-                  Next.js
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Building SEO-friendly, server-side rendered, and static web
-                    applications
-                  </span>
-                </li>
-                <li className="group relative">
-                  TypeScript
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Ensuring type safety and reducing runtime errors.
-                  </span>
-                </li>
-                <li className="group relative">
-                  Tailwind CSS
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Crafting sleek and modern designs with utility-first styling
-                  </span>
-                </li>
-                <li className="group relative">
-                  Pixi.js
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Building high-performance 2D games and interactive
-                    animations on the web
-                  </span>
-                </li>
-                <li className="group relative">
-                  D3.js
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Visualizing complex data with custom, interactive charts
-                  </span>
-                </li>
-                <li className="group relative">
-                  Chart.js and Recharts
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Creating intuitive data visualizations
-                  </span>
-                </li>
-                <li className="group relative">
-                  MongoDB
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Working with NoSQL databases for scalable backend
-                    integration
-                  </span>
-                </li>
-                <li className="group relative">
-                  Microsoft Azure
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Deploying and managing applications in the cloud.
-                  </span>
-                </li>
-                <li className="group relative">
-                  Testing Tools
-                  <span className="absolute left-0 bg-gray-800 text-white text-sm p-2 rounded shadow-lg opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 ease-in-out delay-100">
-                    Writing unit and integration tests using React Testing
-                    Library (RTL), Jest and Vitest to ensure code quality and
-                    reliability
-                  </span>
-                </li>
+              <ul className="space-y-3">
+                {[
+                  {
+                    tech: "JavaScript (ES6+)",
+                    desc: "Building dynamic and interactive web features",
+                  },
+                  {
+                    tech: "React.js",
+                    desc: "Developing modular, reusable UI components",
+                  },
+                  {
+                    tech: "Next.js",
+                    desc: "Building SEO-friendly, server-side rendered, and static web applications",
+                  },
+                  {
+                    tech: "TypeScript",
+                    desc: "Ensuring type safety and reducing runtime errors",
+                  },
+                  {
+                    tech: "Tailwind CSS",
+                    desc: "Crafting sleek and modern designs with utility-first styling",
+                  },
+                  {
+                    tech: "Pixi.js",
+                    desc: "Building high-performance 2D games and interactive animations on the web",
+                  },
+                  {
+                    tech: "D3.js",
+                    desc: "Visualizing complex data with custom, interactive charts",
+                  },
+                  {
+                    tech: "Chart.js and Recharts",
+                    desc: "Creating intuitive data visualizations",
+                  },
+                  {
+                    tech: "MongoDB",
+                    desc: "Working with NoSQL databases for scalable backend integration",
+                  },
+                  {
+                    tech: "Microsoft Azure",
+                    desc: "Deploying and managing applications in the cloud",
+                  },
+                  {
+                    tech: "Testing Tools",
+                    desc: "Writing unit and integration tests using React Testing Library (RTL), Jest and Vitest to ensure code quality and reliability",
+                  },
+                ].map((item, index) => (
+                  <li
+                    key={index}
+                    className="group relative bg-gradient-to-r from-aboutPrimary/10 to-transparent border border-aboutPrimary/20 rounded-lg p-3 hover:from-aboutPrimary/20 hover:border-aboutPrimary/40 transition-all duration-300 cursor-pointer"
+                  >
+                    <span className="text-secondary font-semibold text-lg">
+                      {item.tech}
+                    </span>
+                    <span className="absolute left-0 bottom-full mb-2 bg-gray-900/95 backdrop-blur-sm text-white text-sm p-3 rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 w-64 border border-aboutPrimary/30 pointer-events-none">
+                      {item.desc}
+                    </span>
+                  </li>
+                ))}
               </ul>
             </TranslucentCard>
             <TranslucentCard
               position="right"
-              className="w-full tablet:w-[90%] bg-aboutPrimary"
+              className="w-full tablet:w-[90%] bg-aboutPrimary animate-fade-in-up"
             >
-              <div className="flex items-center justify-center desktop:justify-start gap-3 mt-8 mb-4">
-                <FaMedal className="text-yellow-400" />
-                <h2 className="text-aboutPrimary text-3xl font-bold">
+              <div className="flex items-center justify-center desktop:justify-start gap-3 mb-6">
+                <FaMedal className="text-yellow-400 text-3xl drop-shadow-lg" />
+                <h2 className="text-aboutPrimary text-3xl font-bold font-montserrat">
                   Achievements
                 </h2>
               </div>
-              <p>
+              <p className="text-gray-200 leading-relaxed text-lg">
                 In addition to my development work, I have excelled in national
                 mathematics and speedcubing competitions, earning several
                 national awards. I secured{" "}
                 <Link
                   href="https://allafrica.com/stories/201003240496.html"
-                  className="text-aboutPrimary underline hover:text-opacity-80 transition"
+                  className="text-aboutPrimary font-semibold underline hover:text-yellow-400 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -172,7 +160,7 @@ const About = () => {
                 in 2010,{" "}
                 <Link
                   href="https://www.facebook.com/nticedung/photos/a.687528794698680/856882367763321/?_rdr"
-                  className="text-aboutPrimary underline hover:text-opacity-80 transition"
+                  className="text-aboutPrimary font-semibold underline hover:text-yellow-400 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -182,7 +170,7 @@ const About = () => {
                 Olympiad, Nigeria, in 2016,{" "}
                 <Link
                   href="https://www.worldcubeassociation.org/competitions/GhanaChampionship2020"
-                  className="text-aboutPrimary underline hover:text-opacity-80 transition"
+                  className="text-aboutPrimary font-semibold underline hover:text-yellow-400 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -191,7 +179,7 @@ const About = () => {
                 in the Edu-Learn ARIS Ghana Championships 2020, and{" "}
                 <Link
                   href="https://www.worldcubeassociation.org/competitions/NigeriaOpen2019"
-                  className="text-aboutPrimary underline hover:text-opacity-80 transition"
+                  className="text-aboutPrimary font-semibold underline hover:text-yellow-400 transition-colors duration-300"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -199,7 +187,7 @@ const About = () => {
                 </Link>{" "}
                 in the Nigeria Open 2019, where I set two national records.
               </p>
-              <HireMeButton className="bg-[var(--about-primary)]" />
+              <HireMeButton className="bg-[var(--about-primary)] mt-8" />
             </TranslucentCard>
           </div>
         </div>

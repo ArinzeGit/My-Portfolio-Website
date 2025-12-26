@@ -19,15 +19,20 @@ const NavLink = ({ label, href, onClick }: NavLinkProps) => {
   return (
     <Link onClick={onClick} href={href}>
       <div
-        className={`text-[16px] font-roboto transition-colors duration-300 ease-in-out border-[2px] px-3 py-1 rounded-full ${
+        className={`text-[16px] font-roboto transition-all duration-300 ease-in-out border-[2px] px-4 py-2 rounded-full ${
           isActive ? "font-[900]" : "text-secondary font-[500]"
-        }`}
+        } ${hovered ? "scale-105" : ""}`}
         style={{
           color: isActive ? themeColor : undefined,
           borderColor: isActive
             ? themeColor
             : hovered
               ? themeColor
+              : "transparent",
+          backgroundColor: isActive
+            ? `${themeColor}15`
+            : hovered
+              ? `${themeColor}10`
               : "transparent",
         }}
         onMouseEnter={() => setHovered(true)}
