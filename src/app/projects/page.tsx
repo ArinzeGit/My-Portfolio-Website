@@ -16,6 +16,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Hold The Line (Game)",
+    videoDemo: "/videos/hold-the-line-video.webm",
+    description:
+      "Promotional interactive game for Manfred's 'Soldier' music album launch.",
+    techStack: ["Pixi.js", "JavaScript", "Howler.js", "HTML5", "CSS"],
+    github: "https://github.com/ArinzeGit/hold-the-line",
+    live: "https://hold-the-line-swart.vercel.app/",
+  },
+  {
     title: "Student Paddy Website",
     videoDemo: "/videos/student-paddy-website-video.webm",
     description:
@@ -46,15 +55,6 @@ const projects: Project[] = [
       "Vercel",
     ],
     live: "https://student-paddy-admin-dashboard.vercel.app/",
-  },
-  {
-    title: "Hold The Line (Game)",
-    videoDemo: "/videos/hold-the-line-video.webm",
-    description:
-      "Promotional interactive game for Manfred's 'Soldier' music album launch.",
-    techStack: ["Pixi.js", "JavaScript", "HTML5", "CSS"],
-    github: "https://github.com/ArinzeGit/hold-the-line",
-    live: "https://hold-the-line-swart.vercel.app/",
   },
   {
     title: "Bouncing Battle (Game)",
