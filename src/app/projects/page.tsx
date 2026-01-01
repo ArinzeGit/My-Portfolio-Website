@@ -109,17 +109,45 @@ const projects: Project[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            observer.disconnect();
+          }
+        });
+      },
+      {
+        rootMargin: "50px", // Start loading 50px before entering viewport
+      }
+    );
+
+    observer.observe(card);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) return;
     const video = videoRef.current;
     if (video && video.readyState >= 3) {
       setIsLoaded(true);
     }
-  }, []);
+  }, [shouldLoad]);
 
   return (
-    <div className="w-[320px] h-[380px] flex flex-col">
+    <div ref={cardRef} className="w-[320px] h-[380px] flex flex-col">
       <div className="w-full p-4 text-center mb-2">
         <h3 className="text-xl font-bold text-secondary group-hover:text-projectsPrimary transition-colors duration-300">
           {project.title}
@@ -129,29 +157,32 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <div className="relative w-full h-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-[0_8px_32px_rgba(39,174,96,0.3)] rounded-xl">
           {/* Front Side */}
           <div className="absolute w-full h-full overflow-hidden [backface-visibility:hidden] rounded-xl flex items-center justify-center px-2 bg-gradient-to-br from-gray-900/50 to-gray-800/50">
-            {!isLoaded && (
+            {(!shouldLoad || !isLoaded) && (
               <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/40 backdrop-blur-sm">
                 <div className="w-12 h-12 border-[4px] border-projectsPrimary border-t-transparent rounded-full animate-spin" />
               </div>
             )}
-            <video
-              ref={videoRef}
-              aria-label={`Video demo of ${project.title}`}
-              autoPlay
-              loop
-              muted
-              playsInline
-              width="300"
-              onLoadedData={() => {
-                setIsLoaded(true);
-              }}
-              className={`rounded-lg shadow-2xl transition-all duration-500 ${
-                isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
-              }`}
-            >
-              <source src={project.videoDemo} type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+            {shouldLoad && (
+              <video
+                ref={videoRef}
+                aria-label={`Video demo of ${project.title}`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                width="300"
+                onLoadedData={() => {
+                  setIsLoaded(true);
+                }}
+                className={`rounded-lg shadow-2xl transition-all duration-500 ${
+                  isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
+                }`}
+              >
+                <source src={project.videoDemo} type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            )}
           </div>
           {/* Back Side */}
           <div className="absolute w-full h-full flex flex-col justify-between items-center p-6 text-center [transform:rotateY(180deg)] [backface-visibility:hidden] bg-gradient-to-br from-gray-900/95 to-gray-800/95 rounded-xl">
