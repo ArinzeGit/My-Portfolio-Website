@@ -140,14 +140,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
   }, []);
 
   useEffect(() => {
-    if (!shouldLoad) return;
-    const video = videoRef.current;
-    if (video && video.readyState >= 3) {
-      setIsLoaded(true);
-    }
-  }, [shouldLoad]);
-
-  useEffect(() => {
     const video = videoRef.current;
     if (!video || !shouldLoad) return;
 
