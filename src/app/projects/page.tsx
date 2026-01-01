@@ -110,6 +110,7 @@ const projects: Project[] = [
 const ProjectCard = ({ project }: { project: Project }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -146,8 +147,26 @@ const ProjectCard = ({ project }: { project: Project }) => {
     }
   }, [shouldLoad]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+
+    if (isHovered) {
+      video.pause();
+    } else {
+      video.play().catch(() => {
+        // Ignore play() errors (e.g., if video hasn't loaded yet)
+      });
+    }
+  }, [isHovered, shouldLoad]);
+
   return (
-    <div ref={cardRef} className="w-[320px] h-[380px] flex flex-col">
+    <div
+      ref={cardRef}
+      className="w-[320px] h-[380px] flex flex-col"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="w-full p-4 text-center mb-2">
         <h3 className="text-xl font-bold text-secondary group-hover:text-projectsPrimary transition-colors duration-300">
           {project.title}
