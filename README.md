@@ -2,6 +2,10 @@
 
 This is my personal portfolio website showcasing my frontend development and game development projects.
 
+## 📸 Screenshot
+
+![Home Page Screenshot](public/images/screenshot.png)
+
 ## 🚀 Features
 
 - Showcases my **Next.js** and **game development** projects
