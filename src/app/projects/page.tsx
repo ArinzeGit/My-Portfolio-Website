@@ -191,6 +191,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 }`}
               >
                 <source src={project.videoDemo} type="video/webm" />
+                <source src={project.videoDemo.replace(".webm", ".mp4")} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             )}
