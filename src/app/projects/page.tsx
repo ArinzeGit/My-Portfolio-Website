@@ -16,6 +16,15 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "TaskFlow (Task Management System)",
+    videoDemo: "/videos/taskflow-video.webm",
+    description:
+      "A task management tool that helps you stay organized and productive.",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel", "Supabase"],
+    github: "https://github.com/ArinzeGit/TaskFlow",
+    live: "https://taskflow-rust-one.vercel.app/",
+  },
+  {
     title: "Hold The Line (Game)",
     videoDemo: "/videos/hold-the-line-video.webm",
     description:
