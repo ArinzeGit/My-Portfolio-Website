@@ -2,9 +2,9 @@
 
 This is my personal portfolio website showcasing my frontend development and game development projects.
 
-## 📸 Screenshot
+## 📸 Preview
 
-![Home Page Screenshot](public/images/screenshot.png)
+![Preview](public/my-portfolio-website-preview.gif)
 
 ## 🚀 Features
 
