@@ -47,6 +47,7 @@ const projects: Project[] = [
       "Figma",
       "Vercel",
     ],
+    github: "https://github.com/ArinzeGit/Student-Paddy-Website",
     live: "https://student-paddy-website.vercel.app/",
   },
   {
@@ -63,6 +64,7 @@ const projects: Project[] = [
       "Figma",
       "Vercel",
     ],
+    github: "https://github.com/ArinzeGit/Student-Paddy-Admin-Dashboard",
     live: "https://student-paddy-admin-dashboard.vercel.app/",
   },
   {
