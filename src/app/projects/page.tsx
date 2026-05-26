@@ -114,7 +114,7 @@ const projects: Project[] = [
       "A sleek personal portfolio showcasing my projects, skills, and achievements.",
     techStack: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
     github: "https://github.com/ArinzeGit/My-Portfolio-Website",
-    live: "https://my-portfolio-website-silk-five.vercel.app/",
+    live: "https://arinzegames.com/",
   },
 ];
 
